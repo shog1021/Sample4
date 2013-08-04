@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "BoardTypeEnum.h"
 
 @interface ViewController ()
 
@@ -24,6 +25,9 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)pushSoccer:(id)sender {
+    
 }
 
 @end

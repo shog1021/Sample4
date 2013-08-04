@@ -63,6 +63,7 @@
 		935004F517AEAA4D001AD2C9 /* SelectPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPlayer.h; sourceTree = "<group>"; };
 		935004F617AEAA4D001AD2C9 /* SelectPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPlayer.m; sourceTree = "<group>"; };
 		935004F817AEAB9B001AD2C9 /* サッカー.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "サッカー.png"; path = "Sample4/image/サッカー.png"; sourceTree = "<group>"; };
+		935004FA17AEAEB5001AD2C9 /* BoardTypeEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BoardTypeEnum.h; path = const/BoardTypeEnum.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +132,7 @@
 				935004D017AEA105001AD2C9 /* ViewController.h */,
 				935004D117AEA105001AD2C9 /* ViewController.m */,
 				935004BC17AEA105001AD2C9 /* Supporting Files */,
+				935004FA17AEAEB5001AD2C9 /* BoardTypeEnum.h */,
 			);
 			path = Sample4;
 			sourceTree = "<group>";

@@ -25,7 +25,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="oN3-TB-5Dj" kind="modal" id="h40-zM-SXg"/>
+                                    <action selector="pushSoccer:" destination="2" eventType="touchUpInside" id="XaX-gD-PrO"/>
+                                    <segue destination="oN3-TB-5Dj" kind="modal" identifier="goSegue" id="h40-zM-SXg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYG-9e-cjk">
@@ -61,6 +62,9 @@
                             <constraint firstItem="H0X-J6-y5g" firstAttribute="top" secondItem="3" secondAttribute="top" constant="81" id="urv-RB-Vx1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnSoccer" destination="H0X-J6-y5g" id="Fdr-gh-CKe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,23 +101,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixS-Xz-xtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="541" y="48"/>
+            <point key="canvasLocation" x="699" y="55"/>
         </scene>
     </scenes>
     <resources>
         <image name="サッカー.png" width="302" height="468"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SelectPlayer" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectPlayer.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
