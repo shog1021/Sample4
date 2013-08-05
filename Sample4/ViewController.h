@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *btnSoccer;
+@property (nonatomic) IBOutlet UIButton *btnSoccer;
 
 @end
