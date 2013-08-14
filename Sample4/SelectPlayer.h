@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ELCImagePickerController.h"
 
-@interface SelectPlayer : UIViewController
+@interface SelectPlayer : UIViewController<ELCImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate> 
 
 
 @end
