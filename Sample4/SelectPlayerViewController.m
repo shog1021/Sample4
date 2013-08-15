@@ -6,16 +6,16 @@
 //  Copyright (c) 2013年 中村 祥二. All rights reserved.
 //
 
-#import "SelectPlayer.h"
+#import "SelectPlayerViewController.h"
 #import "ELCImagePickerController.h"
 #import "ELCAlbumPickerController.h"
-#import "ELCImagePickerDemoAppDelegate.h"
+#import "AppDelegate.h"
 
-@interface SelectPlayer ()
+@interface SelectPlayerViewController ()
 
 @end
 
-@implementation SelectPlayer
+@implementation SelectPlayerViewController
 
 @synthesize scrollView = _scrollView;
 
@@ -49,12 +49,12 @@
     [albumController setParent:elcPicker];
 	[elcPicker setDelegate:self];
     
-    ELCImagePickerDemoAppDelegate *app = (ELCImagePickerDemoAppDelegate *)[[UIApplication sharedApplication] delegate];
+    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [app.viewController presentViewController:elcPicker animated:YES completion:nil];
 }
 
 
-- (void)elcImagePickerController:(SelectPlayer *)picker didFinishPickingMediaWithInfo:(NSArray *)info
+- (void)elcImagePickerController:(SelectPlayerViewController *)picker didFinishPickingMediaWithInfo:(NSArray *)info
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 	
@@ -89,7 +89,7 @@
 }
 
 
-- (void)elcImagePickerControllerDidCancel:(SelectPlayer *)picker
+- (void)elcImagePickerControllerDidCancel:(SelectPlayerViewController *)picker
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }

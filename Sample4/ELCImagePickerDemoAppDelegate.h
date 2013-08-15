@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class SelectPlayer;
+@class SelectPlayerViewController;
 
 @interface ELCImagePickerDemoAppDelegate : NSObject <UIApplicationDelegate> 
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet SelectPlayer *viewController;
+@property (nonatomic, retain) IBOutlet SelectPlayerViewController *viewController;
 
 @end
 

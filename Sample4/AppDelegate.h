@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class SelectPlayerViewController;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) UIWindow *window;
+@property (nonatomic, retain) IBOutlet SelectPlayerViewController *viewController;
 
 @end

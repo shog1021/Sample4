@@ -7,7 +7,7 @@
 //
 
 #import "ELCImagePickerDemoAppDelegate.h"
-#import "SelectPlayer.h"
+#import "SelectPlayerViewController.h"
 
 @implementation ELCImagePickerDemoAppDelegate
 

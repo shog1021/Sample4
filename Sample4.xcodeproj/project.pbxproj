@@ -23,7 +23,7 @@
 		935004DC17AEA105001AD2C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935004B717AEA105001AD2C9 /* Foundation.framework */; };
 		935004E417AEA105001AD2C9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 935004E217AEA105001AD2C9 /* InfoPlist.strings */; };
 		935004E717AEA105001AD2C9 /* Sample4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 935004E617AEA105001AD2C9 /* Sample4Tests.m */; };
-		935004F717AEAA4D001AD2C9 /* SelectPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 935004F617AEAA4D001AD2C9 /* SelectPlayer.m */; };
+		935004F717AEAA4D001AD2C9 /* SelectPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935004F617AEAA4D001AD2C9 /* SelectPlayerViewController.m */; };
 		935004F917AEAB9B001AD2C9 /* サッカー.png in Resources */ = {isa = PBXBuildFile; fileRef = 935004F817AEAB9B001AD2C9 /* サッカー.png */; };
 		93BD32A017BB552B00CD6A34 /* ELCImagePickerDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 93BD329F17BB552B00CD6A34 /* ELCImagePickerDemoAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D5CF8317AFF16100A03C02 /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7317AFF16100A03C02 /* ELCAlbumPickerController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -72,8 +72,8 @@
 		935004E317AEA105001AD2C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		935004E517AEA105001AD2C9 /* Sample4Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sample4Tests.h; sourceTree = "<group>"; };
 		935004E617AEA105001AD2C9 /* Sample4Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sample4Tests.m; sourceTree = "<group>"; };
-		935004F517AEAA4D001AD2C9 /* SelectPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPlayer.h; sourceTree = "<group>"; };
-		935004F617AEAA4D001AD2C9 /* SelectPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPlayer.m; sourceTree = "<group>"; };
+		935004F517AEAA4D001AD2C9 /* SelectPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPlayerViewController.h; sourceTree = "<group>"; };
+		935004F617AEAA4D001AD2C9 /* SelectPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPlayerViewController.m; sourceTree = "<group>"; };
 		935004F817AEAB9B001AD2C9 /* サッカー.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "サッカー.png"; path = "Sample4/image/サッカー.png"; sourceTree = "<group>"; };
 		935004FA17AEAEB5001AD2C9 /* BoardTypeEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BoardTypeEnum.h; path = const/BoardTypeEnum.h; sourceTree = "<group>"; };
 		93BD329E17BB552B00CD6A34 /* ELCImagePickerDemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCImagePickerDemoAppDelegate.h; sourceTree = "<group>"; };
@@ -160,8 +160,8 @@
 			children = (
 				93BD329E17BB552B00CD6A34 /* ELCImagePickerDemoAppDelegate.h */,
 				93BD329F17BB552B00CD6A34 /* ELCImagePickerDemoAppDelegate.m */,
-				935004F517AEAA4D001AD2C9 /* SelectPlayer.h */,
-				935004F617AEAA4D001AD2C9 /* SelectPlayer.m */,
+				935004F517AEAA4D001AD2C9 /* SelectPlayerViewController.h */,
+				935004F617AEAA4D001AD2C9 /* SelectPlayerViewController.m */,
 				935004C417AEA105001AD2C9 /* AppDelegate.h */,
 				935004C517AEA105001AD2C9 /* AppDelegate.m */,
 				935004CD17AEA105001AD2C9 /* MainStoryboard.storyboard */,
@@ -364,7 +364,7 @@
 				935004C217AEA105001AD2C9 /* main.m in Sources */,
 				935004C617AEA105001AD2C9 /* AppDelegate.m in Sources */,
 				935004D217AEA105001AD2C9 /* ViewController.m in Sources */,
-				935004F717AEAA4D001AD2C9 /* SelectPlayer.m in Sources */,
+				935004F717AEAA4D001AD2C9 /* SelectPlayerViewController.m in Sources */,
 				93D5CF8317AFF16100A03C02 /* ELCAlbumPickerController.m in Sources */,
 				93D5CF8417AFF16100A03C02 /* ELCAsset.m in Sources */,
 				93D5CF8517AFF16100A03C02 /* ELCAssetCell.m in Sources */,
