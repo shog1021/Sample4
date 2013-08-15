@@ -160,9 +160,9 @@
 			children = (
 				93BD329E17BB552B00CD6A34 /* ELCImagePickerDemoAppDelegate.h */,
 				93BD329F17BB552B00CD6A34 /* ELCImagePickerDemoAppDelegate.m */,
-				935004C417AEA105001AD2C9 /* AppDelegate.h */,
 				935004F517AEAA4D001AD2C9 /* SelectPlayer.h */,
 				935004F617AEAA4D001AD2C9 /* SelectPlayer.m */,
+				935004C417AEA105001AD2C9 /* AppDelegate.h */,
 				935004C517AEA105001AD2C9 /* AppDelegate.m */,
 				935004CD17AEA105001AD2C9 /* MainStoryboard.storyboard */,
 				935004D017AEA105001AD2C9 /* ViewController.h */,

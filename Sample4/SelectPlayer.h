@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "ELCImagePickerController.h"
 
-@interface SelectPlayer : UIViewController<ELCImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate> 
+
+@interface SelectPlayer : UIViewController<ELCImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
+
+@property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, copy) NSArray *chosenImages;
 
 
 @end

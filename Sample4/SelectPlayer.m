@@ -17,6 +17,9 @@
 
 @implementation SelectPlayer
 
+@synthesize scrollView = _scrollView;
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -47,13 +50,47 @@
 	[elcPicker setDelegate:self];
     
     ELCImagePickerDemoAppDelegate *app = (ELCImagePickerDemoAppDelegate *)[[UIApplication sharedApplication] delegate];
-    if ([app.viewController respondsToSelector:@selector(presentViewController:animated:completion:)]){
-        [app.viewController presentViewController:elcPicker animated:YES completion:nil];
-    } else {
-        [app.viewController presentModalViewController:elcPicker animated:YES];
-    }
-    
-    
+    [app.viewController presentViewController:elcPicker animated:YES completion:nil];
 }
 
+
+- (void)elcImagePickerController:(SelectPlayer *)picker didFinishPickingMediaWithInfo:(NSArray *)info
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+	
+    for (UIView *v in [_scrollView subviews]) {
+        [v removeFromSuperview];
+    }
+    
+	CGRect workingFrame = _scrollView.frame;
+	workingFrame.origin.x = 0;
+    
+    NSMutableArray *images = [NSMutableArray arrayWithCapacity:[info count]];
+	
+	for(NSDictionary *dict in info) {
+        
+        UIImage *image = [dict objectForKey:UIImagePickerControllerOriginalImage];
+        [images addObject:image];
+        
+		UIImageView *imageview = [[UIImageView alloc] initWithImage:image];
+		[imageview setContentMode:UIViewContentModeScaleAspectFit];
+		imageview.frame = workingFrame;
+		
+		[_scrollView addSubview:imageview];
+//		[imageview release];
+		
+		workingFrame.origin.x = workingFrame.origin.x + workingFrame.size.width;
+	}
+    
+    self.chosenImages = images;
+	
+	[_scrollView setPagingEnabled:YES];
+	[_scrollView setContentSize:CGSizeMake(workingFrame.origin.x, workingFrame.size.height)];
+}
+
+
+- (void)elcImagePickerControllerDidCancel:(SelectPlayer *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
