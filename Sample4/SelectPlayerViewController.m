@@ -49,8 +49,7 @@
     [albumController setParent:elcPicker];
 	[elcPicker setDelegate:self];
     
-    AppDelegate *app = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [app.viewController presentViewController:elcPicker animated:YES completion:nil];
+    [self presentViewController:elcPicker animated:YES completion:nil];
 }
 
 

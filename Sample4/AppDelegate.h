@@ -10,9 +10,10 @@
 
 @class SelectPlayerViewController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : NSObject <UIApplicationDelegate>
 
-@property (nonatomic, retain) UIWindow *window;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet SelectPlayerViewController *viewController;
+
 
 @end
