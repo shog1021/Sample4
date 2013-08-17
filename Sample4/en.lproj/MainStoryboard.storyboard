@@ -68,6 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="80" y="9"/>
         </scene>
         <!--Select Player View Controller-->
         <scene sceneID="McY-YC-c2j">
@@ -83,19 +84,13 @@
                                     <constraint firstAttribute="height" constant="358" id="TaI-re-7nl"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHr-XN-sp6">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="Zch-by-uzA"/>
-                                    <constraint firstAttribute="width" constant="297" id="hV2-6d-CFf"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mz5-qL-uBW">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="LAH-pv-Vjc"/>
                                     <constraint firstAttribute="width" constant="128" id="wCO-IB-moG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="Normal Picker">
+                                <state key="normal" title="写真選択">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -103,20 +98,26 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="luaunch:" destination="oN3-TB-5Dj" eventType="touchUpInside" id="tVI-vb-KEs"/>
+                                    <action selector="launch:" destination="oN3-TB-5Dj" eventType="touchUpInside" id="cNl-fE-rgC"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pzu-UT-ecS"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3Sd-9Z-xbu" firstAttribute="top" secondItem="UCY-9l-qc7" secondAttribute="top" constant="13" id="17q-zk-4V9"/>
-                            <constraint firstAttribute="bottom" secondItem="gHr-XN-sp6" secondAttribute="bottom" constant="94" id="7K8-An-aJx"/>
-                            <constraint firstItem="3Sd-9Z-xbu" firstAttribute="centerX" secondItem="gHr-XN-sp6" secondAttribute="centerX" type="default" id="NiJ-KF-j5E"/>
+                            <constraint firstAttribute="bottom" secondItem="Pzu-UT-ecS" secondAttribute="bottom" constant="89" id="LE8-eA-BBb"/>
+                            <constraint firstItem="3Sd-9Z-xbu" firstAttribute="leading" secondItem="UCY-9l-qc7" secondAttribute="leading" constant="31" id="OLQ-T0-XsM"/>
                             <constraint firstAttribute="bottom" secondItem="mz5-qL-uBW" secondAttribute="bottom" constant="37" id="Oqa-a9-cK0"/>
-                            <constraint firstItem="gHr-XN-sp6" firstAttribute="leading" secondItem="UCY-9l-qc7" secondAttribute="leading" constant="13" id="SIA-aB-BzP"/>
-                            <constraint firstItem="mz5-qL-uBW" firstAttribute="centerX" secondItem="gHr-XN-sp6" secondAttribute="centerX" type="default" id="hSa-kW-e1z"/>
+                            <constraint firstItem="mz5-qL-uBW" firstAttribute="centerX" secondItem="3Sd-9Z-xbu" secondAttribute="centerX" type="default" id="WAc-Uv-STe"/>
+                            <constraint firstAttribute="trailing" secondItem="Pzu-UT-ecS" secondAttribute="trailing" constant="13" id="qob-cc-Eiw"/>
+                            <constraint firstItem="Pzu-UT-ecS" firstAttribute="leading" secondItem="UCY-9l-qc7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="uLQ-vj-yi7"/>
+                            <constraint firstItem="Pzu-UT-ecS" firstAttribute="top" secondItem="UCY-9l-qc7" secondAttribute="top" constant="57" id="zR7-xL-zHK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="scrollView" destination="Pzu-UT-ecS" id="3D6-tg-Hzg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixS-Xz-xtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -133,7 +134,7 @@
         <class className="SelectPlayerViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectPlayerViewController.h"/>
             <relationships>
-                <relationship kind="action" name="luaunch:"/>
+                <relationship kind="action" name="launch:"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
         </class>

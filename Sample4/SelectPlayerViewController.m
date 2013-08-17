@@ -18,6 +18,7 @@
 @implementation SelectPlayerViewController
 
 @synthesize scrollView = _scrollView;
+@synthesize chosenImages = _chosenImages;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -41,7 +42,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)luaunch:(id)sender {
+- (IBAction)launch:(id)sender {
     NSLog(@"message1");
     ELCAlbumPickerController *albumController = [[ELCAlbumPickerController alloc] initWithNibName: nil bundle: nil];
 	ELCImagePickerController *elcPicker = [[ELCImagePickerController alloc] initWithRootViewController:albumController];
