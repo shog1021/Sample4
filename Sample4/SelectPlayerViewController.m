@@ -61,31 +61,24 @@
     for (UIView *v in [_scrollView subviews]) {
         [v removeFromSuperview];
     }
-    
-	CGRect workingFrame = _scrollView.frame;
-	workingFrame.origin.x = 0;
-    
+
     NSMutableArray *images = [NSMutableArray arrayWithCapacity:[info count]];
-	
+
+    UIView *containView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150*[info count], 80)];
+
+    int i = 0;
 	for(NSDictionary *dict in info) {
-        
         UIImage *image = [dict objectForKey:UIImagePickerControllerOriginalImage];
         [images addObject:image];
-        
-		UIImageView *imageview = [[UIImageView alloc] initWithImage:image];
-		[imageview setContentMode:UIViewContentModeScaleAspectFit];
-		imageview.frame = workingFrame;
-		
-		[_scrollView addSubview:imageview];
-//		[imageview release];
-		
-		workingFrame.origin.x = workingFrame.origin.x + workingFrame.size.width;
-	}
+        UIImageView *iv = [[UIImageView alloc] initWithImage:image];
+        iv.frame = CGRectMake(150 * i++, 0, 150, 80);
+        NSLog(@"Rect->%@", NSStringFromCGRect(iv.frame));
+        [containView addSubview:iv];
+    }
     
-    self.chosenImages = images;
-	
+    _scrollView.contentSize = containView.frame.size;
+    [_scrollView addSubview:containView];
 	[_scrollView setPagingEnabled:YES];
-	[_scrollView setContentSize:CGSizeMake(workingFrame.origin.x, workingFrame.size.height)];
 }
 
 

@@ -80,10 +80,11 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="サッカー.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Sd-9Z-xbu">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="262" id="CVR-Wu-REj"/>
-                                    <constraint firstAttribute="height" constant="358" id="TaI-re-7nl"/>
+                                    <constraint firstAttribute="height" constant="313" id="Hfs-zR-HEZ"/>
+                                    <constraint firstAttribute="width" constant="269" id="KNV-YO-bBE"/>
                                 </constraints>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pzu-UT-ecS"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mz5-qL-uBW">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="LAH-pv-Vjc"/>
@@ -101,18 +102,17 @@
                                     <action selector="launch:" destination="oN3-TB-5Dj" eventType="touchUpInside" id="cNl-fE-rgC"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pzu-UT-ecS"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3Sd-9Z-xbu" firstAttribute="top" secondItem="UCY-9l-qc7" secondAttribute="top" constant="13" id="17q-zk-4V9"/>
-                            <constraint firstAttribute="bottom" secondItem="Pzu-UT-ecS" secondAttribute="bottom" constant="89" id="LE8-eA-BBb"/>
-                            <constraint firstItem="3Sd-9Z-xbu" firstAttribute="leading" secondItem="UCY-9l-qc7" secondAttribute="leading" constant="31" id="OLQ-T0-XsM"/>
-                            <constraint firstAttribute="bottom" secondItem="mz5-qL-uBW" secondAttribute="bottom" constant="37" id="Oqa-a9-cK0"/>
-                            <constraint firstItem="mz5-qL-uBW" firstAttribute="centerX" secondItem="3Sd-9Z-xbu" secondAttribute="centerX" type="default" id="WAc-Uv-STe"/>
-                            <constraint firstAttribute="trailing" secondItem="Pzu-UT-ecS" secondAttribute="trailing" constant="13" id="qob-cc-Eiw"/>
-                            <constraint firstItem="Pzu-UT-ecS" firstAttribute="leading" secondItem="UCY-9l-qc7" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="uLQ-vj-yi7"/>
-                            <constraint firstItem="Pzu-UT-ecS" firstAttribute="top" secondItem="UCY-9l-qc7" secondAttribute="top" constant="57" id="zR7-xL-zHK"/>
+                            <constraint firstItem="mz5-qL-uBW" firstAttribute="top" secondItem="Pzu-UT-ecS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="12w-KT-t0Q"/>
+                            <constraint firstItem="Pzu-UT-ecS" firstAttribute="top" secondItem="UCY-9l-qc7" secondAttribute="top" constant="329" id="AC5-hD-CZq"/>
+                            <constraint firstItem="3Sd-9Z-xbu" firstAttribute="top" secondItem="UCY-9l-qc7" secondAttribute="top" constant="13" id="H8p-c4-xWB"/>
+                            <constraint firstAttribute="bottom" secondItem="mz5-qL-uBW" secondAttribute="bottom" constant="95" id="cX0-hf-Gpg"/>
+                            <constraint firstItem="Pzu-UT-ecS" firstAttribute="leading" secondItem="UCY-9l-qc7" secondAttribute="leading" constant="90" id="fuN-bR-lNp"/>
+                            <constraint firstAttribute="trailing" secondItem="3Sd-9Z-xbu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="j4o-mO-VsK"/>
+                            <constraint firstItem="Pzu-UT-ecS" firstAttribute="centerX" secondItem="3Sd-9Z-xbu" secondAttribute="centerX" type="default" id="scY-ni-klk"/>
+                            <constraint firstItem="mz5-qL-uBW" firstAttribute="leading" secondItem="UCY-9l-qc7" secondAttribute="leading" constant="106" id="snA-e1-FAg"/>
                         </constraints>
                     </view>
                     <connections>
