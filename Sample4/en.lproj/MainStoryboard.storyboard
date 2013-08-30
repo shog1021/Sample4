@@ -80,15 +80,15 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="サッカー.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Sd-9Z-xbu">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="313" id="Hfs-zR-HEZ"/>
-                                    <constraint firstAttribute="width" constant="269" id="KNV-YO-bBE"/>
+                                    <constraint firstAttribute="height" constant="391" id="AbW-Qg-hcc"/>
+                                    <constraint firstAttribute="width" constant="269" id="nZ4-lD-FNK"/>
                                 </constraints>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pzu-UT-ecS"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pzu-UT-ecS" customClass="DraggledScrollView"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mz5-qL-uBW">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="LAH-pv-Vjc"/>
-                                    <constraint firstAttribute="width" constant="128" id="wCO-IB-moG"/>
+                                    <constraint firstAttribute="width" constant="128" id="iU2-W2-DaA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                                 <state key="normal" title="写真選択">
@@ -105,14 +105,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="mz5-qL-uBW" firstAttribute="top" secondItem="Pzu-UT-ecS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="12w-KT-t0Q"/>
-                            <constraint firstItem="Pzu-UT-ecS" firstAttribute="top" secondItem="UCY-9l-qc7" secondAttribute="top" constant="329" id="AC5-hD-CZq"/>
+                            <constraint firstItem="Pzu-UT-ecS" firstAttribute="top" secondItem="3Sd-9Z-xbu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="D3H-CI-TvW"/>
                             <constraint firstItem="3Sd-9Z-xbu" firstAttribute="top" secondItem="UCY-9l-qc7" secondAttribute="top" constant="13" id="H8p-c4-xWB"/>
-                            <constraint firstAttribute="bottom" secondItem="mz5-qL-uBW" secondAttribute="bottom" constant="95" id="cX0-hf-Gpg"/>
-                            <constraint firstItem="Pzu-UT-ecS" firstAttribute="leading" secondItem="UCY-9l-qc7" secondAttribute="leading" constant="90" id="fuN-bR-lNp"/>
+                            <constraint firstItem="mz5-qL-uBW" firstAttribute="top" secondItem="Pzu-UT-ecS" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Zco-Bi-KYR"/>
+                            <constraint firstItem="Pzu-UT-ecS" firstAttribute="leading" secondItem="UCY-9l-qc7" secondAttribute="leading" constant="85" id="c92-5n-XLm"/>
                             <constraint firstAttribute="trailing" secondItem="3Sd-9Z-xbu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="j4o-mO-VsK"/>
-                            <constraint firstItem="Pzu-UT-ecS" firstAttribute="centerX" secondItem="3Sd-9Z-xbu" secondAttribute="centerX" type="default" id="scY-ni-klk"/>
-                            <constraint firstItem="mz5-qL-uBW" firstAttribute="leading" secondItem="UCY-9l-qc7" secondAttribute="leading" constant="106" id="snA-e1-FAg"/>
+                            <constraint firstItem="Pzu-UT-ecS" firstAttribute="centerX" secondItem="UCY-9l-qc7" secondAttribute="centerX" type="default" id="nKe-Mc-xpX"/>
+                            <constraint firstAttribute="bottom" secondItem="mz5-qL-uBW" secondAttribute="bottom" constant="12" id="obU-KK-cAK"/>
+                            <constraint firstItem="3Sd-9Z-xbu" firstAttribute="centerX" secondItem="mz5-qL-uBW" secondAttribute="centerX" type="default" id="umD-t4-Xcp"/>
                         </constraints>
                     </view>
                     <connections>
@@ -128,6 +128,9 @@
         <image name="サッカー.png" width="302" height="468"/>
     </resources>
     <classes>
+        <class className="DraggledScrollView" superclassName="UIScrollView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DraggledScrollView.h"/>
+        </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
