@@ -82,7 +82,8 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
     [self xxx:(info)];
     return;
     
-
+    /// この下のロジックはいまのところ不要だが、ひとまず残しておく。
+    
     NSMutableArray *images = [NSMutableArray arrayWithCapacity:[info count]];
 
     UIView *containView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150*[info count], 80)];
@@ -143,6 +144,13 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
 	[slideUpView addSubview:thumbScrollView];
 
 }
+
+
+- (void)elcImagePickerControllerDidCancel:(SelectPlayerViewController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 
 

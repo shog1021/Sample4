@@ -10,7 +10,7 @@
 #import "ELCImagePickerController.h"
 
 
-@interface SelectPlayerViewController : UIViewController<ELCImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
+@interface SelectPlayerViewController : UIViewController<ELCImagePickerControllerDelegate>
 {
     UIScrollView *thumbScrollView;	//	サムネイル一覧を埋め込んだスクロールビュー
     UIView       *slideUpView;		//	thumbScrollViewを埋め込んだビュー
@@ -20,10 +20,5 @@
 @property (nonatomic, copy) NSArray *chosenImages;
 
 
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
 
 @end
