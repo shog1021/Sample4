@@ -103,12 +103,12 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
         [v removeFromSuperview];
     }
 
-    [self xxx:(info)];
+    [self createThumbNail:(info)];
     return;
 
 }
 
-- (void)xxx:(NSArray *)info
+- (void)createThumbNail:(NSArray *)info
 {
     
 	//	スクロールビューにサムネイルビューを埋め込む
@@ -147,9 +147,6 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-
-
 
 
 @end
