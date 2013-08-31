@@ -25,7 +25,6 @@
 		935004E717AEA105001AD2C9 /* Sample4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 935004E617AEA105001AD2C9 /* Sample4Tests.m */; };
 		935004F717AEAA4D001AD2C9 /* SelectPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935004F617AEAA4D001AD2C9 /* SelectPlayerViewController.m */; };
 		935004F917AEAB9B001AD2C9 /* サッカー.png in Resources */ = {isa = PBXBuildFile; fileRef = 935004F817AEAB9B001AD2C9 /* サッカー.png */; };
-		93AE26C117C9E5EC009CF5B8 /* DraggledScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE26C017C9E5EC009CF5B8 /* DraggledScrollView.m */; };
 		93D5CF8317AFF16100A03C02 /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7317AFF16100A03C02 /* ELCAlbumPickerController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D5CF8417AFF16100A03C02 /* ELCAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7517AFF16100A03C02 /* ELCAsset.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D5CF8517AFF16100A03C02 /* ELCAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7717AFF16100A03C02 /* ELCAssetCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -77,8 +76,6 @@
 		935004F617AEAA4D001AD2C9 /* SelectPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPlayerViewController.m; sourceTree = "<group>"; };
 		935004F817AEAB9B001AD2C9 /* サッカー.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "サッカー.png"; path = "Sample4/image/サッカー.png"; sourceTree = "<group>"; };
 		935004FA17AEAEB5001AD2C9 /* BoardTypeEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BoardTypeEnum.h; path = const/BoardTypeEnum.h; sourceTree = "<group>"; };
-		93AE26BF17C9E5EC009CF5B8 /* DraggledScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DraggledScrollView.h; sourceTree = "<group>"; };
-		93AE26C017C9E5EC009CF5B8 /* DraggledScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggledScrollView.m; sourceTree = "<group>"; };
 		93D5CF7217AFF16100A03C02 /* ELCAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAlbumPickerController.h; sourceTree = "<group>"; };
 		93D5CF7317AFF16100A03C02 /* ELCAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAlbumPickerController.m; sourceTree = "<group>"; };
 		93D5CF7417AFF16100A03C02 /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
@@ -168,8 +165,6 @@
 				935004C417AEA105001AD2C9 /* AppDelegate.h */,
 				935004C517AEA105001AD2C9 /* AppDelegate.m */,
 				935004CD17AEA105001AD2C9 /* MainStoryboard.storyboard */,
-				93AE26BF17C9E5EC009CF5B8 /* DraggledScrollView.h */,
-				93AE26C017C9E5EC009CF5B8 /* DraggledScrollView.m */,
 				935004D017AEA105001AD2C9 /* ViewController.h */,
 				935004D117AEA105001AD2C9 /* ViewController.m */,
 				935004BC17AEA105001AD2C9 /* Supporting Files */,
@@ -375,7 +370,6 @@
 				93D5CF8517AFF16100A03C02 /* ELCAssetCell.m in Sources */,
 				93D5CF8617AFF16100A03C02 /* ELCAssetTablePicker.m in Sources */,
 				93D5CF8717AFF16100A03C02 /* ELCImagePickerController.m in Sources */,
-				93AE26C117C9E5EC009CF5B8 /* DraggledScrollView.m in Sources */,
 				93F729EC17D0BA8D00E8987E /* thumbView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
