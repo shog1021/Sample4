@@ -74,11 +74,15 @@ static float distanceBetweenPoints(CGPoint a, CGPoint b) {
     NSLog(@"touchesEnded");
     if (dragging) {
 		//	ドラッグしていたので、自分が帰るべき位置に移動。
-        [self goHome];
+//        [self goHome];
         dragging = NO;
     } else if ([[touches anyObject] tapCount] == 1) {
 		//	タップとみなす。
     }
+    
+#warning post
+    // notification
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"thumbNotification" object:self];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {

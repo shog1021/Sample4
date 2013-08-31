@@ -21,8 +21,8 @@
 @synthesize scrollView = _scrollView;
 @synthesize chosenImages = _chosenImages;
 
-#define THUMB_WIDTH 100		//	サムネイルビューの幅
-#define THUMB_HEIGHT 100	//	〃　高さ
+#define THUMB_WIDTH 80		//	サムネイルビューの幅
+#define THUMB_HEIGHT 80	//	〃　高さ
 #define MARGIN 10			//	サムネイルビュー間のすきま
 
 static UIScrollView* createThumbScrollView(CGRect inFrame)
@@ -30,6 +30,10 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
 	UIScrollView* thumbScrollView = [[UIScrollView alloc] initWithFrame:inFrame];
 	[thumbScrollView setCanCancelContentTouches:NO];
 	[thumbScrollView setClipsToBounds:NO];
+    [thumbScrollView setShowsVerticalScrollIndicator:FALSE];
+    [thumbScrollView setAlwaysBounceHorizontal:YES];
+    [thumbScrollView setAlwaysBounceVertical:NO];
+    
 	return thumbScrollView;
 }
 
@@ -51,6 +55,29 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
 	thumbScrollView = createThumbScrollView(CGRectMake(0, 0, scrollViewWidth, scrollViewHeight));
 
 	// Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(thumb:) name:@"thumbNotification" object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)thumb:(NSNotification *)notification {
+    
+    ThumbView *thumbView = (ThumbView *)notification.object;
+    
+    NSLog(@"きた！　%@",thumbView);
+    
+    thumbView.frame = CGRectMake(0, 0, 100, 100);
+    [self.view addSubview:thumbView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,14 +102,19 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 	
-    for (UIView *v in [_scrollView subviews]) {
+    for (UIView *v in [thumbScrollView subviews]) {
         [v removeFromSuperview];
     }
-
+    
+    
     [self xxx:(info)];
     return;
     
     /// この下のロジックはいまのところ不要だが、ひとまず残しておく。
+    for (UIView *v in [_scrollView subviews]) {
+        [v removeFromSuperview];
+    }
+    
 
     NSMutableArray *images = [NSMutableArray arrayWithCapacity:[info count]];
 
@@ -124,24 +156,25 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
         [iv setFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
 		
         ThumbView *view = [[ThumbView alloc] initWithFrame:frame];
+		view.backgroundColor = [UIColor greenColor];
         [view addSubview:iv];
 
 		[thumbScrollView addSubview:view];
 		frame.origin.x += (frame.size.width + MARGIN);			//	横にずらす
 	}
-	[thumbScrollView setContentSize:CGSizeMake(frame.origin.x, [[self view] bounds].size.width)];
+    // XXX 立て幅 80 だけどここは流動にしたい。とりえあえず 80に。
+    CGSize thumbScrollViewSize = CGSizeMake(frame.origin.x, 80);
+
+    [thumbScrollView setContentSize:thumbScrollViewSize];
     
 	//	スクロールビューを埋め込む入れ物を作成
 	CGRect bounds = [[self view] bounds];
 	frame = CGRectMake(CGRectGetMinX(bounds), CGRectGetMaxY(bounds) - [thumbScrollView frame].size.height, bounds.size.width, [thumbScrollView frame].size.height);
-	slideUpView = [[UIView alloc] initWithFrame:frame];
-	//	暗い半透明の黒の背景とする
-	[slideUpView setBackgroundColor:[UIColor orangeColor]];
-	[slideUpView setOpaque:NO];
-	[slideUpView setAlpha:0.75];
-	[[self view] addSubview:slideUpView];
-	//	スクロールビュー埋めこみ
-	[slideUpView addSubview:thumbScrollView];
+
+    thumbScrollView.frame = frame;
+	[thumbScrollView setBackgroundColor:[UIColor orangeColor]];
+    
+	[[self view] addSubview:thumbScrollView];
 
 }
 
