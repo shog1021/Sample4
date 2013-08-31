@@ -11,9 +11,14 @@
 
 
 @interface SelectPlayerViewController : UIViewController<ELCImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate>
+{
+    UIScrollView *thumbScrollView;	//	サムネイル一覧を埋め込んだスクロールビュー
+    UIView       *slideUpView;		//	thumbScrollViewを埋め込んだビュー
 
+}
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, copy) NSArray *chosenImages;
+
 
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;

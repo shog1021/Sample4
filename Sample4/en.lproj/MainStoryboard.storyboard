@@ -4,6 +4,18 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="aLP-ry-QOp">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="gVk-Jy-Ss2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Iyj-tq-d7f">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nwX-gV-7AG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-978" y="-120"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="5">
             <objects>
@@ -104,6 +116,9 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
+                        </accessibility>
                         <constraints>
                             <constraint firstItem="Pzu-UT-ecS" firstAttribute="top" secondItem="3Sd-9Z-xbu" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="D3H-CI-TvW"/>
                             <constraint firstItem="3Sd-9Z-xbu" firstAttribute="top" secondItem="UCY-9l-qc7" secondAttribute="top" constant="13" id="H8p-c4-xWB"/>
