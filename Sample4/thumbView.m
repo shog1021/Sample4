@@ -6,11 +6,11 @@
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
-#import "thumbView.h"
+#import "ThumbView.h"
 
 #define DRAG_THRESHOLD 10		//	ドラッグを開始させるのに必要な距離
 
-@implementation thumbView
+@implementation ThumbView
 @synthesize home;
 @synthesize touchLocation;
 

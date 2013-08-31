@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface thumbView : UIView {
+@interface ThumbView : UIView {
     CGRect home;			//	ドラッグ前の位置を記憶。    
     BOOL dragging;			//	ドラッグ中はYES
     CGPoint touchLocation;	//	最初タッチ位置、ドラッグ時はドラッグ開始位置を記録。

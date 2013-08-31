@@ -10,7 +10,7 @@
 #import "ELCImagePickerController.h"
 #import "ELCAlbumPickerController.h"
 #import "AppDelegate.h"
-#import "thumbView.h"
+#import "ThumbView.h"
 
 @interface SelectPlayerViewController ()
 
@@ -83,7 +83,7 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
     return;
     
     /// この下のロジックはいまのところ不要だが、ひとまず残しておく。
-    
+
     NSMutableArray *images = [NSMutableArray arrayWithCapacity:[info count]];
 
     UIView *containView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150*[info count], 80)];
@@ -100,7 +100,7 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
         
         iv.frame = CGRectMake(150 * i++, 0, 150, 80);
 
-		thumbView *view = [[thumbView alloc] initWithFrame:viewFrame];
+		ThumbView *view = [[ThumbView alloc] initWithFrame:viewFrame];
         [view addSubview:iv];
         
         NSLog(@"Rect->%@", NSStringFromCGRect(view.frame));
@@ -123,7 +123,7 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
         UIImageView *iv = [[UIImageView alloc] initWithImage:image];
         [iv setFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
 		
-        thumbView *view = [[thumbView alloc] initWithFrame:frame];
+        ThumbView *view = [[ThumbView alloc] initWithFrame:frame];
         [view addSubview:iv];
 
 		[thumbScrollView addSubview:view];
