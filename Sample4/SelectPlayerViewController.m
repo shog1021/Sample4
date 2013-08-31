@@ -18,9 +18,6 @@
 
 @implementation SelectPlayerViewController
 
-@synthesize scrollView = _scrollView;
-@synthesize chosenImages = _chosenImages;
-
 #define THUMB_WIDTH 80		//	サムネイルビューの幅
 #define THUMB_HEIGHT 80	//	〃　高さ
 #define MARGIN 10			//	サムネイルビュー間のすきま
@@ -105,43 +102,10 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
     for (UIView *v in [thumbScrollView subviews]) {
         [v removeFromSuperview];
     }
-    
-    
+
     [self xxx:(info)];
     return;
-    
-    /// この下のロジックはいまのところ不要だが、ひとまず残しておく。
-    for (UIView *v in [_scrollView subviews]) {
-        [v removeFromSuperview];
-    }
-    
 
-    NSMutableArray *images = [NSMutableArray arrayWithCapacity:[info count]];
-
-    UIView *containView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150*[info count], 80)];
-
-    int i = 0;
-    
-    CGRect viewFrame = CGRectMake(5,5, 120, 70);
-	for(NSDictionary *dict in info) {
-        UIImage *image = [dict objectForKey:UIImagePickerControllerOriginalImage];
-        
-        [images addObject:image];
-        
-        UIImageView *iv = [[UIImageView alloc] initWithImage:image];
-        
-        iv.frame = CGRectMake(150 * i++, 0, 150, 80);
-
-		ThumbView *view = [[ThumbView alloc] initWithFrame:viewFrame];
-        [view addSubview:iv];
-        
-        NSLog(@"Rect->%@", NSStringFromCGRect(view.frame));
-        [containView addSubview:view];
-    }
-    
-    _scrollView.contentSize = containView.frame.size;
-    [_scrollView addSubview:containView];
-	[_scrollView setPagingEnabled:YES];
 }
 
 - (void)xxx:(NSArray *)info
