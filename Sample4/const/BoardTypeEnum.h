@@ -9,9 +9,9 @@
 #ifndef Sample4_BoardTypeEnum_h
 #define Sample4_BoardTypeEnum_h
 
-enum BoardTypeEnum {
-    SOCCER, BASCKETBALL, BASEBALL
-};
+typedef enum  {
+    SOCCER = 1, BASEBALL, BASKETBALL
+} BoardTypeEnum;
 
 
 #endif

@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-@property (nonatomic) IBOutlet UIButton *btnSoccer;
 
 @end

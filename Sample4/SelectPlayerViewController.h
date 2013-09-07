@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ELCImagePickerController.h"
 #import "TestUIScrollView.h"
+#import "BoardTypeEnum.h"
 
 @interface SelectPlayerViewController : UIViewController<ELCImagePickerControllerDelegate>
 {
@@ -16,6 +17,8 @@
     UIView       *slideUpView;		//	thumbScrollViewを埋め込んだビュー
 
 }
+@property (weak, nonatomic) IBOutlet UIImageView *boadImage;
 
+@property (nonatomic) BoardTypeEnum boardType;
 
 @end

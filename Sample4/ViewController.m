@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "BoardTypeEnum.h"
+#import "SelectPlayerViewController.h"
+#import "BoardTypeEnum.h"
 
 @interface ViewController ()
 
@@ -26,8 +28,24 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)pushSoccer:(id)sender {
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    BoardTypeEnum type = 0;
     
+    if ([segue.identifier isEqualToString:@"SOCCER"]) {
+        type = SOCCER;
+    } else if ([segue.identifier isEqualToString:@"BASEBALL"])  {
+        type = BASEBALL;
+    } else if ([segue.identifier isEqualToString:@"BASKETBALL"])  {
+        type = BASKETBALL;
+    }
+
+    SelectPlayerViewController* ctrl =
+        (SelectPlayerViewController*)[segue destinationViewController];
+    [ctrl setBoardType:type];
+
 }
 
 @end

@@ -40,8 +40,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="pushSoccer:" destination="2" eventType="touchUpInside" id="XaX-gD-PrO"/>
-                                    <segue destination="oN3-TB-5Dj" kind="push" id="NXS-1D-78Z"/>
+                                    <segue destination="oN3-TB-5Dj" kind="push" identifier="SOCCER" id="NXS-1D-78Z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYG-9e-cjk">
@@ -53,6 +52,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="oN3-TB-5Dj" kind="push" identifier="BASEBALL" id="dFE-2n-vmx"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZU-ep-uos">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -63,6 +65,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="oN3-TB-5Dj" kind="push" identifier="BASKETBALL" id="JZa-i0-Lqe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -78,9 +83,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9FR-RF-btV"/>
-                    <connections>
-                        <outlet property="btnSoccer" destination="H0X-J6-y5g" id="Fdr-gh-CKe"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,10 +96,10 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="サッカー.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Sd-9Z-xbu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Sd-9Z-xbu">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="391" id="AbW-Qg-hcc"/>
-                                    <constraint firstAttribute="width" constant="269" id="nZ4-lD-FNK"/>
+                                    <constraint firstAttribute="height" constant="392" id="4Lp-WI-tOT"/>
+                                    <constraint firstAttribute="width" constant="274" id="RTv-hW-Gzl"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -106,7 +108,7 @@
                             <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
                         </accessibility>
                         <constraints>
-                            <constraint firstItem="3Sd-9Z-xbu" firstAttribute="centerX" secondItem="UCY-9l-qc7" secondAttribute="centerX" type="default" id="eK1-D6-ejO"/>
+                            <constraint firstAttribute="trailing" secondItem="3Sd-9Z-xbu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="CnZ-vJ-AGs"/>
                             <constraint firstItem="3Sd-9Z-xbu" firstAttribute="top" secondItem="UCY-9l-qc7" secondAttribute="top" constant="12" id="pEu-lm-1VM"/>
                         </constraints>
                     </view>
@@ -117,15 +119,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="boadImage" destination="3Sd-9Z-xbu" id="mBk-oZ-0YM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixS-Xz-xtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="993" y="9"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="サッカー.png" width="302" height="468"/>
-    </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
@@ -134,15 +136,11 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectPlayerViewController.h"/>
             <relationships>
                 <relationship kind="action" name="launch:"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="boadImage" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="ViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pushSoccer:"/>
-                <relationship kind="outlet" name="btnSoccer" candidateClass="UIButton"/>
-            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -150,4 +148,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="JZa-i0-Lqe"/>
+    </inferredMetricsTieBreakers>
 </document>

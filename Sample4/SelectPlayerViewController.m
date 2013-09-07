@@ -45,6 +45,18 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // イメージセット
+    UIImage *image = nil;
+    if (self.boardType == SOCCER) {
+        image = [UIImage imageNamed:@"サッカー.png"];
+    } else if (self.boardType == BASEBALL) {
+        image = [UIImage imageNamed:@"野球.png"];
+    } else if (self.boardType == BASKETBALL) {
+        image = [UIImage imageNamed:@"バスケット.jpg"];
+    }
+    [self.boadImage setImage:image];
+
 	//	スクロールビュー作成
 	float scrollViewHeight = MARGIN + THUMB_HEIGHT + MARGIN;
 	float scrollViewWidth  = [[self view] bounds].size.width;
@@ -180,5 +192,6 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     NSLog(@"controller_end x->%f, y->%f", point.x, point.y);
 
 }
+
 
 @end
