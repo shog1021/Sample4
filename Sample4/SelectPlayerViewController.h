@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ELCImagePickerController.h"
-
+#import "TestUIScrollView.h"
 
 @interface SelectPlayerViewController : UIViewController<ELCImagePickerControllerDelegate>
 {
-    UIScrollView *thumbScrollView;	//	サムネイル一覧を埋め込んだスクロールビュー
+    TestUIScrollView *thumbScrollView;	//	サムネイル一覧を埋め込んだスクロールビュー
     UIView       *slideUpView;		//	thumbScrollViewを埋め込んだビュー
 
 }

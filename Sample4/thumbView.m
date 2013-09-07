@@ -33,9 +33,11 @@
 	タッチされた。
 */
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"touchesBegan");
+//    NSLog(@"touchesBegan");
 
     touchLocation = [[touches anyObject] locationInView:self];	//	タッチ開始位置を記録
+    [super.nextResponder touchesBegan:touches withEvent:event];
+
 }
 
 /*
@@ -51,7 +53,7 @@ static float distanceBetweenPoints(CGPoint a, CGPoint b) {
 	最初のタッチ位置からある程度（DRAG_THRESHOLD）動かない限り、ドラッグを開始しない。
 */
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"touchesMoved %@", self);
+//    NSLog(@"touchesMoved %@", self);
 
     CGPoint newTouchLocation = [[touches anyObject] locationInView:self];
 	if (dragging) {
@@ -71,7 +73,7 @@ static float distanceBetweenPoints(CGPoint a, CGPoint b) {
 	ドラッグしていたら自分が帰るべき位置に移動。
 */
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"touchesEnded");
+//    NSLog(@"touchesEnded");
     if (dragging) {
 		//	ドラッグしていたので、自分が帰るべき位置に移動。
 //        [self goHome];
@@ -79,13 +81,15 @@ static float distanceBetweenPoints(CGPoint a, CGPoint b) {
     } else if ([[touches anyObject] tapCount] == 1) {
 		//	タップとみなす。
     }
-    
+
+    [super.nextResponder touchesEnded:touches withEvent:event];
     // notification
     [[NSNotificationCenter defaultCenter] postNotificationName:@"thumbNotification" object:self];
+
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"touchesCancelled");
+//    NSLog(@"touchesCancelled");
 	//	無条件で、自分が帰るべき位置に移動。
     [self goHome];
     dragging = NO;

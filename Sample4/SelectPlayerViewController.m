@@ -22,15 +22,14 @@
 #define THUMB_HEIGHT 80	//	〃　高さ
 #define MARGIN 10			//	サムネイルビュー間のすきま
 
-static UIScrollView* createThumbScrollView(CGRect inFrame)
+static TestUIScrollView* createThumbScrollView(CGRect inFrame)
 {
-	UIScrollView* thumbScrollView = [[UIScrollView alloc] initWithFrame:inFrame];
+	TestUIScrollView* thumbScrollView = [[TestUIScrollView alloc] initWithFrame:inFrame];
 	[thumbScrollView setCanCancelContentTouches:NO];
 	[thumbScrollView setClipsToBounds:NO];
     [thumbScrollView setShowsVerticalScrollIndicator:FALSE];
     [thumbScrollView setAlwaysBounceHorizontal:YES];
     [thumbScrollView setAlwaysBounceVertical:NO];
-    
 	return thumbScrollView;
 }
 
@@ -71,14 +70,28 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
     
     ThumbView *thumbView = (ThumbView *)notification.object;
     
-    NSLog(@"きた！　%@",thumbView);
+    NSLog(@"=======きた！　%@",thumbView);
     
     CGFloat thumbY = thumbView.frame.origin.y;
     if (thumbY < 0) {
+        // 座標yがマイナスになった場合は、スクロールビューから外れたとみなす。
+
+        // y 座標の算出
         // -20 は微調整。
         CGFloat y = self.view.frame.size.height - THUMB_WIDTH - 20 + thumbY;
-        // 座標yがマイナスになった場合は、スクロールビューから外れたとみなす。
-        thumbView.frame = CGRectMake(thumbView.frame.origin.x, y, thumbView.frame.size.width, thumbView.frame.size.height);
+        
+//        NSLog(@"self.view.frame->%f", self.view.frame.size.width);
+//        NSLog(@"now->%f, home->%f", thumbView.frame.origin.x, thumbView.home.origin.x);
+        
+        // x 座標の算出
+        float xxx = floorf(thumbView.home.origin.x / self.view.frame.size.width);
+
+        CGFloat xx = thumbView.home.origin.x - (self.view.frame.size.width * xxx);
+        CGFloat x = xx + (thumbView.frame.origin.x - thumbView.home.origin.x);
+
+//        NSLog(@"xxx->%f, xx->%f, x->%f", xxx, xx, x);
+
+        thumbView.frame = CGRectMake(x, y, thumbView.frame.size.width, thumbView.frame.size.height);
         [self.view addSubview:thumbView];
     } else if (thumbY > thumbScrollView.frame.origin.y) {
         thumbView.frame =  CGRectMake(MARGIN, MARGIN, THUMB_WIDTH, THUMB_HEIGHT);
@@ -156,5 +169,16 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    //    NSLog(@"touchesBegan");
+    CGPoint point = [[touches anyObject] locationInView:self.view];
+    NSLog(@"controller_began x->%f, y->%f", point.x, point.y);
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    CGPoint point = [[touches anyObject] locationInView:self.view];
+    NSLog(@"controller_end x->%f, y->%f", point.x, point.y);
+
+}
 
 @end
