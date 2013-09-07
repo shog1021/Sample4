@@ -53,7 +53,7 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     } else if (self.boardType == BASEBALL) {
         image = [UIImage imageNamed:@"野球.png"];
     } else if (self.boardType == BASKETBALL) {
-        image = [UIImage imageNamed:@"バスケット.jpg"];
+        image = [UIImage imageNamed:@"バスケット.png"];
     }
     [self.boadImage setImage:image];
 
@@ -169,7 +169,7 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
 	frame = CGRectMake(CGRectGetMinX(bounds), CGRectGetMaxY(bounds) - [thumbScrollView frame].size.height, bounds.size.width, [thumbScrollView frame].size.height);
 
     thumbScrollView.frame = frame;
-	[thumbScrollView setBackgroundColor:[UIColor orangeColor]];
+//	[thumbScrollView setBackgroundColor:[UIColor orangeColor]];
     
 	[[self view] addSubview:thumbScrollView];
 

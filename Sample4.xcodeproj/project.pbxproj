@@ -26,8 +26,8 @@
 		935004F717AEAA4D001AD2C9 /* SelectPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935004F617AEAA4D001AD2C9 /* SelectPlayerViewController.m */; };
 		935004F917AEAB9B001AD2C9 /* サッカー.png in Resources */ = {isa = PBXBuildFile; fileRef = 935004F817AEAB9B001AD2C9 /* サッカー.png */; };
 		936CCDC517DB4D7100C9F4B2 /* TestUIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CCDC417DB4D7100C9F4B2 /* TestUIScrollView.m */; };
-		936CCDC817DB594800C9F4B2 /* バスケット.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 936CCDC617DB594800C9F4B2 /* バスケット.jpg */; };
 		936CCDC917DB594800C9F4B2 /* 野球.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CCDC717DB594800C9F4B2 /* 野球.png */; };
+		936CCDCB17DB7B5800C9F4B2 /* バスケット.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CCDCA17DB7B5800C9F4B2 /* バスケット.png */; };
 		93D5CF8317AFF16100A03C02 /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7317AFF16100A03C02 /* ELCAlbumPickerController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D5CF8417AFF16100A03C02 /* ELCAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7517AFF16100A03C02 /* ELCAsset.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D5CF8517AFF16100A03C02 /* ELCAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7717AFF16100A03C02 /* ELCAssetCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -81,8 +81,8 @@
 		935004FA17AEAEB5001AD2C9 /* BoardTypeEnum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BoardTypeEnum.h; path = const/BoardTypeEnum.h; sourceTree = "<group>"; };
 		936CCDC317DB4D7100C9F4B2 /* TestUIScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUIScrollView.h; sourceTree = "<group>"; };
 		936CCDC417DB4D7100C9F4B2 /* TestUIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUIScrollView.m; sourceTree = "<group>"; };
-		936CCDC617DB594800C9F4B2 /* バスケット.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "バスケット.jpg"; path = "Sample4/image/バスケット.jpg"; sourceTree = "<group>"; };
 		936CCDC717DB594800C9F4B2 /* 野球.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "野球.png"; path = "Sample4/image/野球.png"; sourceTree = "<group>"; };
+		936CCDCA17DB7B5800C9F4B2 /* バスケット.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "バスケット.png"; path = "Sample4/image/バスケット.png"; sourceTree = "<group>"; };
 		93D5CF7217AFF16100A03C02 /* ELCAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAlbumPickerController.h; sourceTree = "<group>"; };
 		93D5CF7317AFF16100A03C02 /* ELCAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAlbumPickerController.m; sourceTree = "<group>"; };
 		93D5CF7417AFF16100A03C02 /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 		935004F017AEA58B001AD2C9 /* image */ = {
 			isa = PBXGroup;
 			children = (
-				936CCDC617DB594800C9F4B2 /* バスケット.jpg */,
+				936CCDCA17DB7B5800C9F4B2 /* バスケット.png */,
 				936CCDC717DB594800C9F4B2 /* 野球.png */,
 				935004F817AEAB9B001AD2C9 /* サッカー.png */,
 			);
@@ -338,8 +338,8 @@
 				93D5CF8A17AFF16100A03C02 /* ELCAssetTablePicker.xib in Resources */,
 				93D5CF8B17AFF16100A03C02 /* Overlay.png in Resources */,
 				93D5CF8C17AFF16100A03C02 /* Overlay@2x.png in Resources */,
-				936CCDC817DB594800C9F4B2 /* バスケット.jpg in Resources */,
 				936CCDC917DB594800C9F4B2 /* 野球.png in Resources */,
+				936CCDCB17DB7B5800C9F4B2 /* バスケット.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
