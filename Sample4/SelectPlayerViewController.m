@@ -73,8 +73,17 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
     
     NSLog(@"きた！　%@",thumbView);
     
-    thumbView.frame = CGRectMake(0, 0, 100, 100);
-    [self.view addSubview:thumbView];
+    CGFloat thumbY = thumbView.frame.origin.y;
+    if (thumbY < 0) {
+        // -20 は微調整。
+        CGFloat y = self.view.frame.size.height - THUMB_WIDTH - 20 + thumbY;
+        // 座標yがマイナスになった場合は、スクロールビューから外れたとみなす。
+        thumbView.frame = CGRectMake(thumbView.frame.origin.x, y, thumbView.frame.size.width, thumbView.frame.size.height);
+        [self.view addSubview:thumbView];
+    } else if (thumbY > thumbScrollView.frame.origin.y) {
+        thumbView.frame =  CGRectMake(MARGIN, MARGIN, THUMB_WIDTH, THUMB_HEIGHT);
+        [thumbScrollView addSubview:thumbView];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -120,14 +129,13 @@ static UIScrollView* createThumbScrollView(CGRect inFrame)
         [iv setFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
 		
         ThumbView *view = [[ThumbView alloc] initWithFrame:frame];
-		view.backgroundColor = [UIColor greenColor];
         [view addSubview:iv];
 
 		[thumbScrollView addSubview:view];
 		frame.origin.x += (frame.size.width + MARGIN);			//	横にずらす
 	}
     // XXX 立て幅 80 だけどここは流動にしたい。とりえあえず 80に。
-    CGSize thumbScrollViewSize = CGSizeMake(frame.origin.x, 80);
+    CGSize thumbScrollViewSize = CGSizeMake(frame.origin.x, THUMB_WIDTH);
 
     [thumbScrollView setContentSize:thumbScrollViewSize];
     

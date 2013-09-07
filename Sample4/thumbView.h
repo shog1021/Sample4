@@ -17,7 +17,7 @@
 @property (nonatomic, assign) CGRect home;
 @property (nonatomic, assign) CGPoint touchLocation;
 
-- (void)goHome;							// 現在のframe位置からhome位置にアニメーションで戻す。
++ (void)goHome;							// 現在のframe位置からhome位置にアニメーションで戻す。
 - (void)moveByOffset:(CGPoint)offset;	// frameを指定したオフセット分ずらす。
 
 @end

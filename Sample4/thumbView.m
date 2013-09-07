@@ -51,8 +51,8 @@ static float distanceBetweenPoints(CGPoint a, CGPoint b) {
 	最初のタッチ位置からある程度（DRAG_THRESHOLD）動かない限り、ドラッグを開始しない。
 */
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"touchesMoved");
-    
+    NSLog(@"touchesMoved %@", self);
+
     CGPoint newTouchLocation = [[touches anyObject] locationInView:self];
 	if (dragging) {
 		//	すでにドラッグ中。あたらしい位置に自分を移動。
@@ -80,7 +80,6 @@ static float distanceBetweenPoints(CGPoint a, CGPoint b) {
 		//	タップとみなす。
     }
     
-#warning post
     // notification
     [[NSNotificationCenter defaultCenter] postNotificationName:@"thumbNotification" object:self];
 }
