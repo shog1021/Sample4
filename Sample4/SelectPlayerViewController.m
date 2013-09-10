@@ -12,6 +12,10 @@
 #import "AppDelegate.h"
 #import "ThumbView.h"
 
+#import <CoreGraphics/CoreGraphics.h>
+#import <QuartzCore/QuartzCore.h>
+
+
 @interface SelectPlayerViewController ()
 
 @end
@@ -63,6 +67,20 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
 	float scrollViewWidth  = [[self view] bounds].size.width;
 	thumbScrollView = createThumbScrollView(CGRectMake(0, 0, scrollViewWidth, scrollViewHeight));
 
+    // バーボタン
+    UIBarButtonItem* right1 = [[UIBarButtonItem alloc]
+                               initWithTitle:@"選択"
+                               style:UIBarButtonItemStyleBordered
+                               target:self
+                               action:@selector(launch:)];
+    
+    UIBarButtonItem* right2 = [[UIBarButtonItem alloc]
+                               initWithTitle:@"SHOT"
+                               style:UIBarButtonItemStyleBordered
+                               target:self
+                               action:@selector(printing:)];
+    self.navigationItem.rightBarButtonItems = @[right1, right2];
+    
 	// Do any additional setup after loading the view.
 }
 
@@ -129,6 +147,33 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     [self presentViewController:elcPicker animated:YES completion:nil];
 }
 
+- (void)printing:(id)sender {
+    // キャプチャ対象をWindowにします。
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    
+    // キャプチャ画像を描画する対象を生成します。
+    UIGraphicsBeginImageContextWithOptions(window.bounds.size, NO, 0.0f);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    // Windowの現在の表示内容を１つずつ描画して行きます。
+    for (UIWindow *aWindow in [[UIApplication sharedApplication] windows]) {
+        [aWindow.layer renderInContext:context];
+    }
+    
+    // 描画した内容をUIImageとして受け取ります。
+    UIImage *capturedImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIImageView *iv = [[UIImageView alloc] initWithImage:capturedImage];
+ 
+    iv.frame = CGRectMake(0.0,  0.0,
+                          self.view.frame.size.width,
+                          self.view.frame.size.height);
+    
+    [self.view addSubview:iv];
+    
+    // 描画を終了します。
+    UIGraphicsEndImageContext();
+}
 
 - (void)elcImagePickerController:(SelectPlayerViewController *)picker didFinishPickingMediaWithInfo:(NSArray *)info
 {

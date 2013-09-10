@@ -15,6 +15,7 @@
 {
     TestUIScrollView *thumbScrollView;	//	サムネイル一覧を埋め込んだスクロールビュー
 }
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigation;
 @property (weak, nonatomic) IBOutlet UIImageView *boadImage;
 @property (nonatomic) BoardTypeEnum boardType;
 

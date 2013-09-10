@@ -89,12 +89,12 @@
             </objects>
             <point key="canvasLocation" x="558" y="9"/>
         </scene>
-        <!--Select Player View Controller - 選手配置-->
+        <!--Select Player View Controller-->
         <scene sceneID="McY-YC-c2j">
             <objects>
                 <viewController id="oN3-TB-5Dj" customClass="SelectPlayerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" verticalHuggingPriority="109" id="UCY-9l-qc7">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Sd-9Z-xbu">
@@ -109,20 +109,23 @@
                             <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
                         </accessibility>
                         <constraints>
+                            <constraint firstItem="3Sd-9Z-xbu" firstAttribute="top" secondItem="UCY-9l-qc7" secondAttribute="top" constant="7" id="8VR-PW-LRf"/>
                             <constraint firstAttribute="trailing" secondItem="3Sd-9Z-xbu" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="CnZ-vJ-AGs"/>
-                            <constraint firstItem="3Sd-9Z-xbu" firstAttribute="top" secondItem="UCY-9l-qc7" secondAttribute="top" constant="12" id="pEu-lm-1VM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="選手配置" id="PM0-bj-ny1">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="PM0-bj-ny1">
                         <barButtonItem key="rightBarButtonItem" title="選択" id="cIW-w3-1gO">
                             <connections>
                                 <action selector="launch:" destination="oN3-TB-5Dj" id="hfa-4X-3K3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <outlet property="boadImage" destination="3Sd-9Z-xbu" id="mBk-oZ-0YM"/>
+                        <outlet property="navigation" destination="PM0-bj-ny1" id="acF-OC-59q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ixS-Xz-xtX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -130,21 +133,6 @@
             <point key="canvasLocation" x="993" y="9"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SelectPlayerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectPlayerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="launch:"/>
-                <relationship kind="outlet" name="boadImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
