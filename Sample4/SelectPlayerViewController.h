@@ -14,11 +14,8 @@
 @interface SelectPlayerViewController : UIViewController<ELCImagePickerControllerDelegate>
 {
     TestUIScrollView *thumbScrollView;	//	サムネイル一覧を埋め込んだスクロールビュー
-    UIView       *slideUpView;		//	thumbScrollViewを埋め込んだビュー
-
 }
 @property (weak, nonatomic) IBOutlet UIImageView *boadImage;
-
 @property (nonatomic) BoardTypeEnum boardType;
 
 @end

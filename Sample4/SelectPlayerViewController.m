@@ -30,6 +30,7 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     [thumbScrollView setShowsVerticalScrollIndicator:FALSE];
     [thumbScrollView setAlwaysBounceHorizontal:YES];
     [thumbScrollView setAlwaysBounceVertical:NO];
+    [thumbScrollView setPagingEnabled:YES];
 	return thumbScrollView;
 }
 
@@ -147,29 +148,51 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     
 	//	スクロールビューにサムネイルビューを埋め込む
     //	THUMB_WIDTH x THUMB_HEIGHT をサムネイルビューとする
-	CGRect frame = CGRectMake(MARGIN, MARGIN, THUMB_WIDTH, THUMB_HEIGHT);
+
+    // スクロールビューにページを差し込む
+    
+    // １ページ毎のサムビュー数
+    const int thumbs = 3;
+    
+    UIView* slide = nil;
+	CGRect thumbFrame;
+    CGRect slideFrame;
+    int count = 0;
+    int slideCount = 0;
 	for(NSDictionary *dict in info) {
+        if (count % thumbs == 0) {
+            slideFrame = CGRectMake(0.0 + (self.view.frame.size.width * slideCount),
+                                    0.0,
+                                    self.view.frame.size.width,
+                                    thumbScrollView.frame.size.height);
+            slide = [[UIView alloc] initWithFrame:slideFrame];
+            slideCount++;
+            [thumbScrollView addSubview:slide];
+            thumbFrame = CGRectMake(MARGIN, MARGIN, THUMB_WIDTH, THUMB_HEIGHT);
+        }
+        count++;
         UIImage *image = [dict objectForKey:UIImagePickerControllerOriginalImage];
         UIImageView *iv = [[UIImageView alloc] initWithImage:image];
-        [iv setFrame:CGRectMake(0.0, 0.0, frame.size.width, frame.size.height)];
+        [iv setFrame:CGRectMake(0.0, 0.0, thumbFrame.size.width, thumbFrame.size.height)];
 		
-        ThumbView *view = [[ThumbView alloc] initWithFrame:frame];
+        ThumbView *view = [[ThumbView alloc] initWithFrame:thumbFrame];
         [view addSubview:iv];
 
-		[thumbScrollView addSubview:view];
-		frame.origin.x += (frame.size.width + MARGIN);			//	横にずらす
+		[slide addSubview:view];
+		thumbFrame.origin.x += (thumbFrame.size.width + MARGIN);			//	横にずらす
 	}
     // XXX 立て幅 80 だけどここは流動にしたい。とりえあえず 80に。
-    CGSize thumbScrollViewSize = CGSizeMake(frame.origin.x, THUMB_WIDTH);
+    CGSize thumbScrollViewSize = CGSizeMake(slideFrame.origin.x + self.view.frame.size.width, THUMB_HEIGHT);
 
     [thumbScrollView setContentSize:thumbScrollViewSize];
     
 	//	スクロールビューを埋め込む入れ物を作成
 	CGRect bounds = [[self view] bounds];
-	frame = CGRectMake(CGRectGetMinX(bounds), CGRectGetMaxY(bounds) - [thumbScrollView frame].size.height, bounds.size.width, [thumbScrollView frame].size.height);
+	thumbScrollView.frame = CGRectMake(CGRectGetMinX(bounds),
+                                       CGRectGetMaxY(bounds) - [thumbScrollView frame].size.height,
+                                       bounds.size.width,
+                                       [thumbScrollView frame].size.height);
 
-    thumbScrollView.frame = frame;
-//	[thumbScrollView setBackgroundColor:[UIColor orangeColor]];
     
 	[[self view] addSubview:thumbScrollView];
 
