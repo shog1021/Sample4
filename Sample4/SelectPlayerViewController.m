@@ -18,9 +18,9 @@
 
 @implementation SelectPlayerViewController
 
-#define THUMB_WIDTH 80		//	サムネイルビューの幅
-#define THUMB_HEIGHT 80	//	〃　高さ
-#define MARGIN 10			//	サムネイルビュー間のすきま
+#define THUMB_WIDTH 65		//	サムネイルビューの幅
+#define THUMB_HEIGHT 65	//	〃　高さ
+#define MARGIN 12			//	サムネイルビュー間のすきま
 
 static TestUIScrollView* createThumbScrollView(CGRect inFrame)
 {
@@ -147,12 +147,12 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
 {
     
 	//	スクロールビューにサムネイルビューを埋め込む
-    //	THUMB_WIDTH x THUMB_HEIGHT をサムネイルビューとする
+    //	THUMB_WIDTH x THUMB_HrEIGHT をサムネイルビューとする
 
     // スクロールビューにページを差し込む
     
     // １ページ毎のサムビュー数
-    const int thumbs = 3;
+    const int thumbs = 4;
     
     UIView* slide = nil;
 	CGRect thumbFrame;
