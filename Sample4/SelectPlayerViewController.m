@@ -143,6 +143,24 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
 - (void)printing:(id)sender {
     // See http://iphone-dev.g.hatena.ne.jp/saika_makoto/20081117
     
+    //アラートビューの生成と設定
+    // 改行はオプションキーを押しながら ¥ ボタン押下
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"スクリーンショットの保存"
+                          message:@"フォトアルバムに保存します。\nよろしいですか?"
+                          delegate:self
+                          cancelButtonTitle:@"いいえ" otherButtonTitles:@"はい", nil];
+    [alert show];
+
+}
+
+// アラートからのデリゲート
+-(void)alertView:(UIAlertView*)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSLog(@"push ->%d", buttonIndex);
+    if (buttonIndex != 1) {
+        return;
+    }
+    
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     UIGraphicsBeginImageContext(screenRect.size);
     
@@ -155,7 +173,17 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     UIImage *screenImage = UIGraphicsGetImageFromCurrentImageContext();
     UIImageWriteToSavedPhotosAlbum(screenImage, nil, nil, nil);
     UIGraphicsEndImageContext();
+    
+    
+    //アラートビューの生成と設定
+    UIAlertView *alertFin = [[UIAlertView alloc]
+                             initWithTitle:@"スクリーンショットの保存"
+                             message:@"保存しました。"
+                             delegate:nil
+                             cancelButtonTitle:@"閉じる" otherButtonTitles:nil];
+    [alertFin show];
 }
+
 
 - (void)elcImagePickerController:(SelectPlayerViewController *)picker didFinishPickingMediaWithInfo:(NSArray *)info
 {
