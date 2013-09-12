@@ -13,9 +13,7 @@
 		935004C017AEA105001AD2C9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 935004BE17AEA105001AD2C9 /* InfoPlist.strings */; };
 		935004C217AEA105001AD2C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 935004C117AEA105001AD2C9 /* main.m */; };
 		935004C617AEA105001AD2C9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 935004C517AEA105001AD2C9 /* AppDelegate.m */; };
-		935004C817AEA105001AD2C9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 935004C717AEA105001AD2C9 /* Default.png */; };
 		935004CA17AEA105001AD2C9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 935004C917AEA105001AD2C9 /* Default@2x.png */; };
-		935004CC17AEA105001AD2C9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 935004CB17AEA105001AD2C9 /* Default-568h@2x.png */; };
 		935004CF17AEA105001AD2C9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 935004CD17AEA105001AD2C9 /* MainStoryboard.storyboard */; };
 		935004D217AEA105001AD2C9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 935004D117AEA105001AD2C9 /* ViewController.m */; };
 		935004DA17AEA105001AD2C9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 935004D917AEA105001AD2C9 /* SenTestingKit.framework */; };
@@ -28,6 +26,8 @@
 		936CCDC517DB4D7100C9F4B2 /* TestUIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CCDC417DB4D7100C9F4B2 /* TestUIScrollView.m */; };
 		936CCDC917DB594800C9F4B2 /* 野球.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CCDC717DB594800C9F4B2 /* 野球.png */; };
 		936CCDCB17DB7B5800C9F4B2 /* バスケット.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CCDCA17DB7B5800C9F4B2 /* バスケット.png */; };
+		93AA293B17E21BC0008AE966 /* Japan_57*57.png in Resources */ = {isa = PBXBuildFile; fileRef = 93AA293A17E21BC0008AE966 /* Japan_57*57.png */; };
+		93AA293C17E21BDE008AE966 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93AA293417E21183008AE966 /* Default-568h@2x.png */; };
 		93D5CF8317AFF16100A03C02 /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7317AFF16100A03C02 /* ELCAlbumPickerController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D5CF8417AFF16100A03C02 /* ELCAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7517AFF16100A03C02 /* ELCAsset.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D5CF8517AFF16100A03C02 /* ELCAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7717AFF16100A03C02 /* ELCAssetCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -63,9 +63,7 @@
 		935004C317AEA105001AD2C9 /* Sample4-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sample4-Prefix.pch"; sourceTree = "<group>"; };
 		935004C417AEA105001AD2C9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		935004C517AEA105001AD2C9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		935004C717AEA105001AD2C9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		935004C917AEA105001AD2C9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		935004CB17AEA105001AD2C9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		935004CE17AEA105001AD2C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		935004D017AEA105001AD2C9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		935004D117AEA105001AD2C9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -83,6 +81,9 @@
 		936CCDC417DB4D7100C9F4B2 /* TestUIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUIScrollView.m; sourceTree = "<group>"; };
 		936CCDC717DB594800C9F4B2 /* 野球.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "野球.png"; path = "Sample4/image/野球.png"; sourceTree = "<group>"; };
 		936CCDCA17DB7B5800C9F4B2 /* バスケット.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "バスケット.png"; path = "Sample4/image/バスケット.png"; sourceTree = "<group>"; };
+		93AA293417E21183008AE966 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		93AA293617E21251008AE966 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		93AA293A17E21BC0008AE966 /* Japan_57*57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Japan_57*57.png"; sourceTree = "<group>"; };
 		93D5CF7217AFF16100A03C02 /* ELCAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAlbumPickerController.h; sourceTree = "<group>"; };
 		93D5CF7317AFF16100A03C02 /* ELCAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAlbumPickerController.m; sourceTree = "<group>"; };
 		93D5CF7417AFF16100A03C02 /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
@@ -132,6 +133,9 @@
 		935004A917AEA105001AD2C9 = {
 			isa = PBXGroup;
 			children = (
+				93AA293A17E21BC0008AE966 /* Japan_57*57.png */,
+				93AA293617E21251008AE966 /* Default.png */,
+				93AA293417E21183008AE966 /* Default-568h@2x.png */,
 				93D5CF8D17B0009900A03C02 /* AssetsLibrary.framework */,
 				93D5CF7117AFF16100A03C02 /* ELCImagePicker */,
 				935004F017AEA58B001AD2C9 /* image */,
@@ -189,9 +193,7 @@
 				935004BE17AEA105001AD2C9 /* InfoPlist.strings */,
 				935004C117AEA105001AD2C9 /* main.m */,
 				935004C317AEA105001AD2C9 /* Sample4-Prefix.pch */,
-				935004C717AEA105001AD2C9 /* Default.png */,
 				935004C917AEA105001AD2C9 /* Default@2x.png */,
-				935004CB17AEA105001AD2C9 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -328,9 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				935004C017AEA105001AD2C9 /* InfoPlist.strings in Resources */,
-				935004C817AEA105001AD2C9 /* Default.png in Resources */,
 				935004CA17AEA105001AD2C9 /* Default@2x.png in Resources */,
-				935004CC17AEA105001AD2C9 /* Default-568h@2x.png in Resources */,
 				935004CF17AEA105001AD2C9 /* MainStoryboard.storyboard in Resources */,
 				935004F917AEAB9B001AD2C9 /* サッカー.png in Resources */,
 				93D5CF8817AFF16100A03C02 /* ELCAlbumPickerController.xib in Resources */,
@@ -340,6 +340,8 @@
 				93D5CF8C17AFF16100A03C02 /* Overlay@2x.png in Resources */,
 				936CCDC917DB594800C9F4B2 /* 野球.png in Resources */,
 				936CCDCB17DB7B5800C9F4B2 /* バスケット.png in Resources */,
+				93AA293B17E21BC0008AE966 /* Japan_57*57.png in Resources */,
+				93AA293C17E21BDE008AE966 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

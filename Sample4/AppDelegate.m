@@ -19,6 +19,8 @@
     // Override point for customization after application launch.
     
     [self.window makeKeyAndVisible];
+    // スプラッシュ時間
+    sleep(2);
     return YES;
 }
 							
