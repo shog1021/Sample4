@@ -35,6 +35,7 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     [thumbScrollView setAlwaysBounceHorizontal:YES];
     [thumbScrollView setAlwaysBounceVertical:NO];
     [thumbScrollView setPagingEnabled:YES];
+    [thumbScrollView setBackgroundColor:[UIColor colorWithRed:0.0f green:0.0f blue:1.0f alpha:0.1f]];
 	return thumbScrollView;
 }
 
@@ -138,31 +139,21 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     [self presentViewController:elcPicker animated:YES completion:nil];
 }
 
+// SHOT ボタン押下
 - (void)printing:(id)sender {
-    // キャプチャ対象をWindowにします。
-    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    // See http://iphone-dev.g.hatena.ne.jp/saika_makoto/20081117
     
-    // キャプチャ画像を描画する対象を生成します。
-    UIGraphicsBeginImageContextWithOptions(window.bounds.size, NO, 0.0f);
-    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    UIGraphicsBeginImageContext(screenRect.size);
     
-    // Windowの現在の表示内容を１つずつ描画して行きます。
-    for (UIWindow *aWindow in [[UIApplication sharedApplication] windows]) {
-        [aWindow.layer renderInContext:context];
-    }
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    [[UIColor blackColor] set];
+    CGContextFillRect(ctx, screenRect);
     
-    // 描画した内容をUIImageとして受け取ります。
-    UIImage *capturedImage = UIGraphicsGetImageFromCurrentImageContext();
+    [self.view.layer renderInContext:ctx];
     
-    UIImageView *iv = [[UIImageView alloc] initWithImage:capturedImage];
- 
-    iv.frame = CGRectMake(0.0,  0.0,
-                          self.view.frame.size.width,
-                          self.view.frame.size.height);
-    
-    [self.view addSubview:iv];
-    
-    // 描画を終了します。
+    UIImage *screenImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIImageWriteToSavedPhotosAlbum(screenImage, nil, nil, nil);
     UIGraphicsEndImageContext();
 }
 
