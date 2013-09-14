@@ -161,8 +161,8 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     }
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-    // 微調整
-    screenRect.size.height -= 145;
+    // 画像切り取り。下の空白部分を除外。155 は微調整
+    screenRect.size.height -= 155;
     UIGraphicsBeginImageContext(screenRect.size);
     
     CGContextRef ctx = UIGraphicsGetCurrentContext();
