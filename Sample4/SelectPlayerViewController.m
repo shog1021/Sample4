@@ -35,7 +35,7 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     [thumbScrollView setAlwaysBounceHorizontal:YES];
     [thumbScrollView setAlwaysBounceVertical:NO];
     [thumbScrollView setPagingEnabled:YES];
-    [thumbScrollView setBackgroundColor:[UIColor colorWithRed:0.0f green:0.0f blue:1.0f alpha:0.1f]];
+//    [thumbScrollView setBackgroundColor:[UIColor colorWithRed:0.0f green:0.0f blue:1.0f alpha:0.1f]];
 	return thumbScrollView;
 }
 
@@ -76,7 +76,7 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
                                action:@selector(launch:)];
     
     UIBarButtonItem* right2 = [[UIBarButtonItem alloc]
-                               initWithTitle:@"SHOT"
+                               initWithTitle:@"保存"
                                style:UIBarButtonItemStyleBordered
                                target:self
                                action:@selector(printing:)];
@@ -101,8 +101,6 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
 - (void)thumb:(NSNotification *)notification {
     
     ThumbView *thumbView = (ThumbView *)notification.object;
-    
-    NSLog(@"=======きた！　%@",thumbView);
     
     CGFloat thumbY = thumbView.frame.origin.y;
     if (thumbY < 0) {
@@ -168,6 +166,7 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     [[UIColor blackColor] set];
     CGContextFillRect(ctx, screenRect);
     
+//    [self.boadImage.layer renderInContext:ctx];
     [self.view.layer renderInContext:ctx];
     
     UIImage *screenImage = UIGraphicsGetImageFromCurrentImageContext();

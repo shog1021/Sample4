@@ -39,6 +39,7 @@
 		93D5CF8B17AFF16100A03C02 /* Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 93D5CF8117AFF16100A03C02 /* Overlay.png */; };
 		93D5CF8C17AFF16100A03C02 /* Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93D5CF8217AFF16100A03C02 /* Overlay@2x.png */; };
 		93D5CF8E17B0009900A03C02 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D5CF8D17B0009900A03C02 /* AssetsLibrary.framework */; };
+		93DB99FF17E423AC00862E24 /* QBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DB99FE17E423AC00862E24 /* QBFlatButton.m */; };
 		93F729EC17D0BA8D00E8987E /* thumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F729EB17D0BA8D00E8987E /* thumbView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
@@ -101,6 +102,8 @@
 		93D5CF8117AFF16100A03C02 /* Overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Overlay.png; sourceTree = "<group>"; };
 		93D5CF8217AFF16100A03C02 /* Overlay@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Overlay@2x.png"; sourceTree = "<group>"; };
 		93D5CF8D17B0009900A03C02 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		93DB99FD17E423AC00862E24 /* QBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBFlatButton.h; sourceTree = "<group>"; };
+		93DB99FE17E423AC00862E24 /* QBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBFlatButton.m; sourceTree = "<group>"; };
 		93F729EA17D0BA8C00E8987E /* thumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thumbView.h; sourceTree = "<group>"; };
 		93F729EB17D0BA8D00E8987E /* thumbView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = thumbView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +172,8 @@
 		935004BB17AEA105001AD2C9 /* Sample4 */ = {
 			isa = PBXGroup;
 			children = (
+				93DB99FD17E423AC00862E24 /* QBFlatButton.h */,
+				93DB99FE17E423AC00862E24 /* QBFlatButton.m */,
 				93F729EA17D0BA8C00E8987E /* thumbView.h */,
 				93F729EB17D0BA8D00E8987E /* thumbView.m */,
 				935004F517AEAA4D001AD2C9 /* SelectPlayerViewController.h */,
@@ -387,6 +392,7 @@
 				93D5CF8717AFF16100A03C02 /* ELCImagePickerController.m in Sources */,
 				93F729EC17D0BA8D00E8987E /* thumbView.m in Sources */,
 				936CCDC517DB4D7100C9F4B2 /* TestUIScrollView.m in Sources */,
+				93DB99FF17E423AC00862E24 /* QBFlatButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
