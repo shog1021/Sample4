@@ -111,9 +111,6 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <accessibility key="accessibilityConfiguration">
-                            <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
-                        </accessibility>
                         <constraints>
                             <constraint firstItem="3Sd-9Z-xbu" firstAttribute="trailing" secondItem="UCY-9l-qc7" secondAttribute="trailing" type="default" id="6ff-lx-bX4"/>
                             <constraint firstItem="3Sd-9Z-xbu" firstAttribute="top" secondItem="UCY-9l-qc7" secondAttribute="top" type="default" id="sPB-b9-4dV"/>

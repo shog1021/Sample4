@@ -35,6 +35,7 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     [thumbScrollView setAlwaysBounceHorizontal:YES];
     [thumbScrollView setAlwaysBounceVertical:NO];
     [thumbScrollView setPagingEnabled:YES];
+    [thumbScrollView setUserInteractionEnabled:YES];
 //    [thumbScrollView setBackgroundColor:[UIColor colorWithRed:0.0f green:0.0f blue:1.0f alpha:0.1f]];
 	return thumbScrollView;
 }
@@ -160,13 +161,14 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     }
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
+    // 微調整
+    screenRect.size.height -= 145;
     UIGraphicsBeginImageContext(screenRect.size);
     
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     [[UIColor blackColor] set];
     CGContextFillRect(ctx, screenRect);
     
-//    [self.boadImage.layer renderInContext:ctx];
     [self.view.layer renderInContext:ctx];
     
     UIImage *screenImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -258,17 +260,17 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    //    NSLog(@"touchesBegan");
-    CGPoint point = [[touches anyObject] locationInView:self.view];
-    NSLog(@"controller_began x->%f, y->%f", point.x, point.y);
-}
-
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    CGPoint point = [[touches anyObject] locationInView:self.view];
-    NSLog(@"controller_end x->%f, y->%f", point.x, point.y);
-
-}
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+//    //    NSLog(@"touchesBegan");
+//    CGPoint point = [[touches anyObject] locationInView:self.view];
+//    NSLog(@"controller_began x->%f, y->%f", point.x, point.y);
+//}
+//
+//- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+//    CGPoint point = [[touches anyObject] locationInView:self.view];
+//    NSLog(@"controller_end x->%f, y->%f", point.x, point.y);
+//
+//}
 
 
 @end
