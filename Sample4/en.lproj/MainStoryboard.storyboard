@@ -79,14 +79,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="H0X-J6-y5g" firstAttribute="trailing" secondItem="rYG-9e-cjk" secondAttribute="trailing" type="default" id="0vo-nr-S1W"/>
-                            <constraint firstItem="H0X-J6-y5g" firstAttribute="leading" secondItem="rYG-9e-cjk" secondAttribute="leading" type="default" id="6aV-sR-07V"/>
-                            <constraint firstItem="rYG-9e-cjk" firstAttribute="top" secondItem="3" secondAttribute="top" constant="157" id="MF2-t3-ltb"/>
+                            <constraint firstItem="rYG-9e-cjk" firstAttribute="top" secondItem="3" secondAttribute="top" constant="137" id="903-T0-kEf"/>
+                            <constraint firstItem="rYG-9e-cjk" firstAttribute="trailing" secondItem="H0X-J6-y5g" secondAttribute="trailing" type="default" id="Kcq-1H-Uhh"/>
                             <constraint firstItem="H0X-J6-y5g" firstAttribute="top" secondItem="3" secondAttribute="top" constant="62" id="Pus-op-zvB"/>
                             <constraint firstItem="rYG-9e-cjk" firstAttribute="leading" secondItem="pZU-ep-uos" secondAttribute="leading" type="default" id="Wav-U0-7yI"/>
-                            <constraint firstAttribute="bottom" secondItem="pZU-ep-uos" secondAttribute="bottom" constant="190" id="YVu-Xi-8HW"/>
                             <constraint firstItem="pZU-ep-uos" firstAttribute="trailing" secondItem="rYG-9e-cjk" secondAttribute="trailing" type="default" id="by9-dz-x5D"/>
-                            <constraint firstItem="H0X-J6-y5g" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="rF4-aL-ijg"/>
+                            <constraint firstItem="H0X-J6-y5g" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="h27-2j-NOO"/>
+                            <constraint firstItem="pZU-ep-uos" firstAttribute="top" secondItem="3" secondAttribute="top" constant="212" id="mnB-sY-2Jg"/>
+                            <constraint firstItem="rYG-9e-cjk" firstAttribute="leading" secondItem="H0X-J6-y5g" secondAttribute="leading" type="default" id="zcS-kc-JPw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ボード選択" id="9FR-RF-btV"/>

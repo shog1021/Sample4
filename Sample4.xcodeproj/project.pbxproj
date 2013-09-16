@@ -40,6 +40,7 @@
 		93D5CF8C17AFF16100A03C02 /* Overlay@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93D5CF8217AFF16100A03C02 /* Overlay@2x.png */; };
 		93D5CF8E17B0009900A03C02 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D5CF8D17B0009900A03C02 /* AssetsLibrary.framework */; };
 		93DB99FF17E423AC00862E24 /* QBFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 93DB99FE17E423AC00862E24 /* QBFlatButton.m */; };
+		93DB9A0117E43BD400862E24 /* バスケット.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 93DB9A0017E43BD400862E24 /* バスケット.jpg */; };
 		93F729EC17D0BA8D00E8987E /* thumbView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F729EB17D0BA8D00E8987E /* thumbView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		93D5CF8D17B0009900A03C02 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		93DB99FD17E423AC00862E24 /* QBFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBFlatButton.h; sourceTree = "<group>"; };
 		93DB99FE17E423AC00862E24 /* QBFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBFlatButton.m; sourceTree = "<group>"; };
+		93DB9A0017E43BD400862E24 /* バスケット.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "バスケット.jpg"; path = "Sample4/image/バスケット.jpg"; sourceTree = "<group>"; };
 		93F729EA17D0BA8C00E8987E /* thumbView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thumbView.h; sourceTree = "<group>"; };
 		93F729EB17D0BA8D00E8987E /* thumbView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = thumbView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +227,7 @@
 		935004F017AEA58B001AD2C9 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				93DB9A0017E43BD400862E24 /* バスケット.jpg */,
 				936CCDCA17DB7B5800C9F4B2 /* バスケット.png */,
 				936CCDC717DB594800C9F4B2 /* 野球.png */,
 				935004F817AEAB9B001AD2C9 /* サッカー.png */,
@@ -347,6 +350,7 @@
 				936CCDCB17DB7B5800C9F4B2 /* バスケット.png in Resources */,
 				93AA293B17E21BC0008AE966 /* Japan_57*57.png in Resources */,
 				93AA293C17E21BDE008AE966 /* Default-568h@2x.png in Resources */,
+				93DB9A0117E43BD400862E24 /* バスケット.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,7 +489,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Shoji Nakamura (4T9B3XC7W2)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Shoji Nakamura (4T9B3XC7W2)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -493,6 +498,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "0C764080-6F71-40BE-AD84-A48F183742D7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0C764080-6F71-40BE-AD84-A48F183742D7";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

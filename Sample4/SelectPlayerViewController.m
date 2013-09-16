@@ -60,7 +60,7 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     } else if (self.boardType == BASEBALL) {
         image = [UIImage imageNamed:@"野球.png"];
     } else if (self.boardType == BASKETBALL) {
-        image = [UIImage imageNamed:@"バスケット.png"];
+        image = [UIImage imageNamed:@"バスケット.jpg"];
     }
     [self.boadImage setImage:image];
 
