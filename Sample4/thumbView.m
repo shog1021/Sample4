@@ -53,7 +53,6 @@ static float distanceBetweenPoints(CGPoint a, CGPoint b) {
 	最初のタッチ位置からある程度（DRAG_THRESHOLD）動かない限り、ドラッグを開始しない。
 */
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-//    NSLog(@"touchesMoved %@", self);
 
     CGPoint newTouchLocation = [[touches anyObject] locationInView:self];
 	if (dragging) {
@@ -73,7 +72,6 @@ static float distanceBetweenPoints(CGPoint a, CGPoint b) {
 	ドラッグしていたら自分が帰るべき位置に移動。
 */
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-//    NSLog(@"touchesEnded");
     if (dragging) {
 		//	ドラッグしていたので、自分が帰るべき位置に移動。
 //        [self goHome];
@@ -89,7 +87,6 @@ static float distanceBetweenPoints(CGPoint a, CGPoint b) {
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-//    NSLog(@"touchesCancelled");
 	//	無条件で、自分が帰るべき位置に移動。
     [self goHome];
     dragging = NO;
