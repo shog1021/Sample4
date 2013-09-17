@@ -20,13 +20,13 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    CGPoint point = [[touches anyObject] locationInView:self];
-    NSLog(@"scrollview_began x->%f, y->%f", point.x, point.y);
+//    CGPoint point = [[touches anyObject] locationInView:self];
+//    NSLog(@"scrollview_began x->%f, y->%f", point.x, point.y);
     [super touchesBegan:touches withEvent:event];
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    CGPoint point = [[touches anyObject] locationInView:self];
-    NSLog(@"scrollview_end x->%f, y->%f", point.x, point.y);
+//    CGPoint point = [[touches anyObject] locationInView:self];
+//    NSLog(@"scrollview_end x->%f, y->%f", point.x, point.y);
     [super touchesEnded:touches withEvent:event];
 }
 

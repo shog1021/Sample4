@@ -63,6 +63,7 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
         image = [UIImage imageNamed:@"バスケット.jpg"];
     }
     [self.boadImage setImage:image];
+    [self.boadImage setUserInteractionEnabled:YES];
 
 	//	スクロールビュー作成
 	float scrollViewHeight = MARGIN + THUMB_HEIGHT + MARGIN;
@@ -113,7 +114,7 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
         
         thumbView.frame = CGRectMake(thumbView.frame.origin.x, y
                                      , thumbView.frame.size.width, thumbView.frame.size.height);
-        [self.view addSubview:thumbView];
+        [self.boadImage addSubview:thumbView];
 
     } else if (thumbY > thumbScrollView.frame.origin.y) {
         thumbView.frame =  CGRectMake(MARGIN, MARGIN, THUMB_WIDTH, THUMB_HEIGHT);
