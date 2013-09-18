@@ -14,7 +14,7 @@
 
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
-
+#import "Social/Social.h"
 
 @interface SelectPlayerViewController ()
 
@@ -82,7 +82,14 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
                                style:UIBarButtonItemStyleBordered
                                target:self
                                action:@selector(printing:)];
-    self.navigationItem.rightBarButtonItems = @[right1, right2];
+
+    UIBarButtonItem* right3 = [[UIBarButtonItem alloc]
+                               initWithTitle:@"FaceBook"
+                               style:UIBarButtonItemStyleBordered
+                               target:self
+                               action:@selector(tweet:)];
+
+    self.navigationItem.rightBarButtonItems = @[right1, right2, right3];
     
 	// Do any additional setup after loading the view.
 }
@@ -139,7 +146,20 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     [self presentViewController:elcPicker animated:YES completion:nil];
 }
 
-// SHOT ボタン押下
+// tweet ボタン押下
+- (void)tweet:(id)sender {
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
+        SLComposeViewController *twitter = [[SLComposeViewController alloc]init];
+        // facebook 
+        twitter = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [twitter setInitialText:[NSString stringWithFormat:@"これが俺のJapanだ!\n#myjapan"]];
+        [twitter addImage:self.screenShot];
+        [self presentViewController:twitter animated:YES completion:NULL];
+        
+    }
+}
+
+// 保存 ボタン押下
 - (void)printing:(id)sender {
     // See http://iphone-dev.g.hatena.ne.jp/saika_makoto/20081117
     
@@ -160,7 +180,22 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     if (buttonIndex != 1) {
         return;
     }
+   
+    UIImage *screenImage = self.screenShot;
+    UIImageWriteToSavedPhotosAlbum(screenImage, nil, nil, nil);
     
+    
+    //アラートビューの生成と設定
+    UIAlertView *alertFin = [[UIAlertView alloc]
+                             initWithTitle:@"スクリーンショットの保存"
+                             message:@"保存しました。"
+                             delegate:nil
+                             cancelButtonTitle:@"閉じる" otherButtonTitles:nil];
+    [alertFin show];
+}
+
+- (UIImage*) screenShot
+{
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     // 画像切り取り。下の空白部分を除外。155 は微調整
     screenRect.size.height -= 155;
@@ -175,17 +210,8 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     UIImage *screenImage = UIGraphicsGetImageFromCurrentImageContext();
     UIImageWriteToSavedPhotosAlbum(screenImage, nil, nil, nil);
     UIGraphicsEndImageContext();
-    
-    
-    //アラートビューの生成と設定
-    UIAlertView *alertFin = [[UIAlertView alloc]
-                             initWithTitle:@"スクリーンショットの保存"
-                             message:@"保存しました。"
-                             delegate:nil
-                             cancelButtonTitle:@"閉じる" otherButtonTitles:nil];
-    [alertFin show];
+    return screenImage;
 }
-
 
 - (void)elcImagePickerController:(SelectPlayerViewController *)picker didFinishPickingMediaWithInfo:(NSArray *)info
 {

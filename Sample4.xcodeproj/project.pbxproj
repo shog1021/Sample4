@@ -28,6 +28,7 @@
 		936CCDCB17DB7B5800C9F4B2 /* バスケット.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CCDCA17DB7B5800C9F4B2 /* バスケット.png */; };
 		93AA293B17E21BC0008AE966 /* Japan_57*57.png in Resources */ = {isa = PBXBuildFile; fileRef = 93AA293A17E21BC0008AE966 /* Japan_57*57.png */; };
 		93AA293C17E21BDE008AE966 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93AA293417E21183008AE966 /* Default-568h@2x.png */; };
+		93D2031917E9F17E00603675 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D2031817E9F17E00603675 /* Social.framework */; };
 		93D5CF8317AFF16100A03C02 /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7317AFF16100A03C02 /* ELCAlbumPickerController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D5CF8417AFF16100A03C02 /* ELCAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7517AFF16100A03C02 /* ELCAsset.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D5CF8517AFF16100A03C02 /* ELCAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7717AFF16100A03C02 /* ELCAssetCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -86,6 +87,7 @@
 		93AA293417E21183008AE966 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		93AA293617E21251008AE966 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		93AA293A17E21BC0008AE966 /* Japan_57*57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Japan_57*57.png"; sourceTree = "<group>"; };
+		93D2031817E9F17E00603675 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		93D5CF7217AFF16100A03C02 /* ELCAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAlbumPickerController.h; sourceTree = "<group>"; };
 		93D5CF7317AFF16100A03C02 /* ELCAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAlbumPickerController.m; sourceTree = "<group>"; };
 		93D5CF7417AFF16100A03C02 /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93D2031917E9F17E00603675 /* Social.framework in Frameworks */,
 				93D5CF8E17B0009900A03C02 /* AssetsLibrary.framework in Frameworks */,
 				935004B617AEA105001AD2C9 /* UIKit.framework in Frameworks */,
 				935004B817AEA105001AD2C9 /* Foundation.framework in Frameworks */,
@@ -138,6 +141,7 @@
 		935004A917AEA105001AD2C9 = {
 			isa = PBXGroup;
 			children = (
+				93D2031817E9F17E00603675 /* Social.framework */,
 				93AA293A17E21BC0008AE966 /* Japan_57*57.png */,
 				93AA293617E21251008AE966 /* Default.png */,
 				93AA293417E21183008AE966 /* Default-568h@2x.png */,
