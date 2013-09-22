@@ -258,9 +258,7 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     [[UIColor blackColor] set];
     CGContextFillRect(ctx, screenRect);
     
-    // ほんとは、boadImage のほうがいいんだけど、下の余白がコントロールできず...
-    // なので、iphone 3.5 inch はあきらめた...
-    [self.view.layer renderInContext:ctx];
+    [self.boadImage.layer renderInContext:ctx];
     
     UIImage *screenImage = UIGraphicsGetImageFromCurrentImageContext();
     UIImageWriteToSavedPhotosAlbum(screenImage, nil, nil, nil);
