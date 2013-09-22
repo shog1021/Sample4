@@ -15,6 +15,7 @@
 #import <CoreGraphics/CoreGraphics.h>
 #import <QuartzCore/QuartzCore.h>
 #import "Social/Social.h"
+#import "KxMenu.h"
 
 @interface SelectPlayerViewController ()
 
@@ -78,21 +79,55 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
                                action:@selector(launch:)];
     
     UIBarButtonItem* right2 = [[UIBarButtonItem alloc]
-                               initWithTitle:@"保存"
+                               initWithTitle:@"ACTION"
                                style:UIBarButtonItemStyleBordered
                                target:self
-                               action:@selector(printing:)];
+                               action:@selector(showMenu:)];
 
-    UIBarButtonItem* right3 = [[UIBarButtonItem alloc]
-                               initWithTitle:@"FaceBook"
-                               style:UIBarButtonItemStyleBordered
-                               target:self
-                               action:@selector(tweet:)];
 
-    self.navigationItem.rightBarButtonItems = @[right1, right2, right3];
-    
+    self.navigationItem.rightBarButtonItems = @[right1, right2];
 	// Do any additional setup after loading the view.
 }
+
+- (void)showMenu:(UIButton *)sender
+{
+    NSArray *menuItems =
+    @[
+      
+      [KxMenuItem menuItem:@"ACTION MENU"
+                     image:nil
+                    target:nil
+                    action:NULL],
+      
+      [KxMenuItem menuItem:@"保存"
+                     image:nil
+                    target:self
+                    action:@selector(printing:)],
+      
+      [KxMenuItem menuItem:@"Facebook"
+                     image:nil
+                    target:self
+                    action:@selector(facebook:)],
+      
+      [KxMenuItem menuItem:@"Tweeter"
+                     image:nil
+                    target:self
+                    action:@selector(tweet:)],
+
+      ];
+    
+    KxMenuItem *first = menuItems[0];
+    first.foreColor = [UIColor colorWithRed:47/255.0f green:112/255.0f blue:225/255.0f alpha:1.0];
+    first.alignment = NSTextAlignmentCenter;
+    
+    CGRect rect = CGRectMake(self.view.frame.size.width - 60, 65,0,0);
+
+    [KxMenu showMenuInView:self.view
+                  fromRect:rect
+                 menuItems:menuItems];
+}
+
+      
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -116,8 +151,8 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
         // 座標yがマイナスになった場合は、スクロールビューから外れたとみなす。
 
         // y 座標の算出
-        // -20 は微調整。
-        CGFloat y = self.view.frame.size.height - THUMB_WIDTH - 20 + thumbY;
+        // -40 は微調整。
+        CGFloat y = self.view.frame.size.height - THUMB_WIDTH - 80 + thumbY;
         
         thumbView.frame = CGRectMake(thumbView.frame.origin.x, y
                                      , thumbView.frame.size.width, thumbView.frame.size.height);
@@ -149,15 +184,31 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
 // tweet ボタン押下
 - (void)tweet:(id)sender {
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
+        
         SLComposeViewController *twitter = [[SLComposeViewController alloc]init];
         // facebook 
-        twitter = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        twitter = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         [twitter setInitialText:[NSString stringWithFormat:@"これが俺のJapanだ!\n#myjapan"]];
         [twitter addImage:self.screenShot];
         [self presentViewController:twitter animated:YES completion:NULL];
         
     }
 }
+
+// tweet ボタン押下
+- (void)facebook:(id)sender {
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
+        
+        SLComposeViewController *facebook = [[SLComposeViewController alloc]init];
+        // facebook
+        facebook = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [facebook setInitialText:[NSString stringWithFormat:@"これが俺のJapanだ!\n#myjapan"]];
+        [facebook addImage:self.screenShot];
+        [self presentViewController:facebook animated:YES completion:NULL];
+        
+    }
+}
+
 
 // 保存 ボタン押下
 - (void)printing:(id)sender {
@@ -196,15 +247,19 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
 
 - (UIImage*) screenShot
 {
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
     // 画像切り取り。下の空白部分を除外。155 は微調整
-    screenRect.size.height -= 155;
+//    screenRect.size.height -= 155;
+//    screenRect.origin.y = 300;
     UIGraphicsBeginImageContext(screenRect.size);
     
     CGContextRef ctx = UIGraphicsGetCurrentContext();
+    
     [[UIColor blackColor] set];
     CGContextFillRect(ctx, screenRect);
     
+    // ほんとは、boadImage のほうがいいんだけど、下の余白がコントロールできず...
+    // なので、iphone 3.5 inch はあきらめた...
     [self.view.layer renderInContext:ctx];
     
     UIImage *screenImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -298,6 +353,7 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
 //    NSLog(@"controller_end x->%f, y->%f", point.x, point.y);
 //
 //}
+
 
 
 @end

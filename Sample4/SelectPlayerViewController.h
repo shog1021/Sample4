@@ -19,4 +19,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *boadImage;
 @property (nonatomic) BoardTypeEnum boardType;
 
+
 @end

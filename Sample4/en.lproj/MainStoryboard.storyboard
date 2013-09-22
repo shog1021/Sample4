@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3Fk-Gx-Omf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3Fk-Gx-Omf">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -23,16 +24,17 @@
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rcZ-6y-3V7"/>
+                        <viewControllerLayoutGuide type="bottom" id="O1o-kx-wng"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0X-J6-y5g" customClass="QBFlatButton" colorLabel="IBBuiltInLabel-Red">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0X-J6-y5g" customClass="QBFlatButton" colorLabel="IBBuiltInLabel-Red">
+                                <rect key="frame" x="55" y="171" width="210" height="61"/>
                                 <accessibility key="accessibilityConfiguration" label=""/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="210" id="WG3-Gi-Fmq"/>
-                                    <constraint firstAttribute="height" constant="61" id="gm1-Eu-iT0"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="サッカー">
@@ -43,34 +45,24 @@
                                     <segue destination="oN3-TB-5Dj" kind="push" identifier="SOCCER" id="NXS-1D-78Z"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYG-9e-cjk" customClass="QBFlatButton">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="shH-NL-M1e"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYG-9e-cjk" customClass="QBFlatButton">
+                                <rect key="frame" x="55" y="258" width="210" height="60"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="野球">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                                 <connections>
                                     <segue destination="oN3-TB-5Dj" kind="push" identifier="BASEBALL" id="dFE-2n-vmx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZU-ep-uos" customClass="QBFlatButton">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="fB7-uw-9li"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZU-ep-uos" customClass="QBFlatButton">
+                                <rect key="frame" x="55" y="338" width="210" height="60"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="バスケット">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="oN3-TB-5Dj" kind="push" identifier="BASKETBALL" id="JZa-i0-Lqe"/>
@@ -78,16 +70,6 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="rYG-9e-cjk" firstAttribute="top" secondItem="3" secondAttribute="top" constant="137" id="903-T0-kEf"/>
-                            <constraint firstItem="rYG-9e-cjk" firstAttribute="trailing" secondItem="H0X-J6-y5g" secondAttribute="trailing" type="default" id="Kcq-1H-Uhh"/>
-                            <constraint firstItem="H0X-J6-y5g" firstAttribute="top" secondItem="3" secondAttribute="top" constant="62" id="Pus-op-zvB"/>
-                            <constraint firstItem="rYG-9e-cjk" firstAttribute="leading" secondItem="pZU-ep-uos" secondAttribute="leading" type="default" id="Wav-U0-7yI"/>
-                            <constraint firstItem="pZU-ep-uos" firstAttribute="trailing" secondItem="rYG-9e-cjk" secondAttribute="trailing" type="default" id="by9-dz-x5D"/>
-                            <constraint firstItem="H0X-J6-y5g" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="h27-2j-NOO"/>
-                            <constraint firstItem="pZU-ep-uos" firstAttribute="top" secondItem="3" secondAttribute="top" constant="212" id="mnB-sY-2Jg"/>
-                            <constraint firstItem="rYG-9e-cjk" firstAttribute="leading" secondItem="H0X-J6-y5g" secondAttribute="leading" type="default" id="zcS-kc-JPw"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ボード選択" id="9FR-RF-btV"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -100,22 +82,19 @@
         <scene sceneID="McY-YC-c2j">
             <objects>
                 <viewController id="oN3-TB-5Dj" customClass="SelectPlayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MJj-GF-Eob"/>
+                        <viewControllerLayoutGuide type="bottom" id="6at-5y-Qh5"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" verticalHuggingPriority="109" id="UCY-9l-qc7">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Sd-9Z-xbu">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="415" id="dEz-KF-bgh"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Sd-9Z-xbu">
+                                <rect key="frame" x="0.0" y="64" width="320" height="411"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="3Sd-9Z-xbu" firstAttribute="trailing" secondItem="UCY-9l-qc7" secondAttribute="trailing" type="default" id="6ff-lx-bX4"/>
-                            <constraint firstItem="3Sd-9Z-xbu" firstAttribute="top" secondItem="UCY-9l-qc7" secondAttribute="top" constant="1" id="JI7-3F-ceJ"/>
-                            <constraint firstItem="3Sd-9Z-xbu" firstAttribute="leading" secondItem="UCY-9l-qc7" secondAttribute="leading" type="default" id="vVJ-nc-LfS"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="PM0-bj-ny1">
@@ -137,26 +116,6 @@
             <point key="canvasLocation" x="993" y="9"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="QBFlatButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QBFlatButton.h"/>
-        </class>
-        <class className="SelectPlayerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectPlayerViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="launch:"/>
-                <relationship kind="outlet" name="aaaView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="boadImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="navigation" candidateClass="UINavigationItem"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

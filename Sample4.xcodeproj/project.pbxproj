@@ -29,6 +29,7 @@
 		93AA293B17E21BC0008AE966 /* Japan_57*57.png in Resources */ = {isa = PBXBuildFile; fileRef = 93AA293A17E21BC0008AE966 /* Japan_57*57.png */; };
 		93AA293C17E21BDE008AE966 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93AA293417E21183008AE966 /* Default-568h@2x.png */; };
 		93D2031917E9F17E00603675 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D2031817E9F17E00603675 /* Social.framework */; };
+		93D2031C17E9FED600603675 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D2031B17E9FED600603675 /* KxMenu.m */; };
 		93D5CF8317AFF16100A03C02 /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7317AFF16100A03C02 /* ELCAlbumPickerController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D5CF8417AFF16100A03C02 /* ELCAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7517AFF16100A03C02 /* ELCAsset.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		93D5CF8517AFF16100A03C02 /* ELCAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D5CF7717AFF16100A03C02 /* ELCAssetCell.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -88,6 +89,8 @@
 		93AA293617E21251008AE966 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		93AA293A17E21BC0008AE966 /* Japan_57*57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Japan_57*57.png"; sourceTree = "<group>"; };
 		93D2031817E9F17E00603675 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		93D2031A17E9FED500603675 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		93D2031B17E9FED600603675 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
 		93D5CF7217AFF16100A03C02 /* ELCAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAlbumPickerController.h; sourceTree = "<group>"; };
 		93D5CF7317AFF16100A03C02 /* ELCAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAlbumPickerController.m; sourceTree = "<group>"; };
 		93D5CF7417AFF16100A03C02 /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
@@ -178,6 +181,8 @@
 		935004BB17AEA105001AD2C9 /* Sample4 */ = {
 			isa = PBXGroup;
 			children = (
+				93D2031A17E9FED500603675 /* KxMenu.h */,
+				93D2031B17E9FED600603675 /* KxMenu.m */,
 				93DB99FD17E423AC00862E24 /* QBFlatButton.h */,
 				93DB99FE17E423AC00862E24 /* QBFlatButton.m */,
 				93F729EA17D0BA8C00E8987E /* thumbView.h */,
@@ -401,6 +406,7 @@
 				93F729EC17D0BA8D00E8987E /* thumbView.m in Sources */,
 				936CCDC517DB4D7100C9F4B2 /* TestUIScrollView.m in Sources */,
 				93DB99FF17E423AC00862E24 /* QBFlatButton.m in Sources */,
+				93D2031C17E9FED600603675 /* KxMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
