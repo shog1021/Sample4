@@ -143,25 +143,27 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
 }
 
 - (void)thumb:(NSNotification *)notification {
-    
     ThumbView *thumbView = (ThumbView *)notification.object;
+
+    NSLog(@"self.boadImage.frame %@", self.boadImage);
+    NSLog(@"thumbView %@", thumbView);
     
     CGFloat thumbY = thumbView.frame.origin.y;
     if (thumbY < 0) {
         // 座標yがマイナスになった場合は、スクロールビューから外れたとみなす。
 
         // y 座標の算出
-        // -40 は微調整。
-        CGFloat y = self.view.frame.size.height - THUMB_WIDTH - 80 + thumbY;
-        
+        CGFloat y = self.view.frame.size.height - THUMB_WIDTH - 90 + thumbY;
         thumbView.frame = CGRectMake(thumbView.frame.origin.x, y
                                      , thumbView.frame.size.width, thumbView.frame.size.height);
         [self.boadImage addSubview:thumbView];
 
-    } else if (thumbY > thumbScrollView.frame.origin.y) {
-        thumbView.frame =  CGRectMake(MARGIN, MARGIN, THUMB_WIDTH, THUMB_HEIGHT);
-        [thumbScrollView addSubview:thumbView];
+    } else if (thumbY >=
+        self.boadImage.frame.size.height - THUMB_WIDTH) {
+        // スクロールビュー枠内にはいってきたらもとに戻す
+        [thumbView goHome];
     }
+
 }
 
 - (void)didReceiveMemoryWarning
