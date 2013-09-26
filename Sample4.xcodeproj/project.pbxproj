@@ -26,6 +26,7 @@
 		936CCDC517DB4D7100C9F4B2 /* TestUIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 936CCDC417DB4D7100C9F4B2 /* TestUIScrollView.m */; };
 		936CCDC917DB594800C9F4B2 /* 野球.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CCDC717DB594800C9F4B2 /* 野球.png */; };
 		936CCDCB17DB7B5800C9F4B2 /* バスケット.png in Resources */ = {isa = PBXBuildFile; fileRef = 936CCDCA17DB7B5800C9F4B2 /* バスケット.png */; };
+		939A04B417F489DC00B4D499 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 939A04B317F489DC00B4D499 /* Images.xcassets */; };
 		93AA293B17E21BC0008AE966 /* Japan_57*57.png in Resources */ = {isa = PBXBuildFile; fileRef = 93AA293A17E21BC0008AE966 /* Japan_57*57.png */; };
 		93AA293C17E21BDE008AE966 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93AA293417E21183008AE966 /* Default-568h@2x.png */; };
 		93D2031917E9F17E00603675 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93D2031817E9F17E00603675 /* Social.framework */; };
@@ -85,6 +86,7 @@
 		936CCDC417DB4D7100C9F4B2 /* TestUIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUIScrollView.m; sourceTree = "<group>"; };
 		936CCDC717DB594800C9F4B2 /* 野球.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "野球.png"; path = "Sample4/image/野球.png"; sourceTree = "<group>"; };
 		936CCDCA17DB7B5800C9F4B2 /* バスケット.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "バスケット.png"; path = "Sample4/image/バスケット.png"; sourceTree = "<group>"; };
+		939A04B317F489DC00B4D499 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		93AA293417E21183008AE966 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		93AA293617E21251008AE966 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		93AA293A17E21BC0008AE966 /* Japan_57*57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Japan_57*57.png"; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				935004FA17AEAEB5001AD2C9 /* BoardTypeEnum.h */,
 				936CCDC317DB4D7100C9F4B2 /* TestUIScrollView.h */,
 				936CCDC417DB4D7100C9F4B2 /* TestUIScrollView.m */,
+				939A04B317F489DC00B4D499 /* Images.xcassets */,
 			);
 			path = Sample4;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				935004F917AEAB9B001AD2C9 /* サッカー.png in Resources */,
 				93D5CF8817AFF16100A03C02 /* ELCAlbumPickerController.xib in Resources */,
 				93D5CF8917AFF16100A03C02 /* ELCAssetPicker.xib in Resources */,
+				939A04B417F489DC00B4D499 /* Images.xcassets in Resources */,
 				93D5CF8A17AFF16100A03C02 /* ELCAssetTablePicker.xib in Resources */,
 				93D5CF8B17AFF16100A03C02 /* Overlay.png in Resources */,
 				93D5CF8C17AFF16100A03C02 /* Overlay@2x.png in Resources */,
@@ -518,7 +522,9 @@
 		935004EB17AEA105001AD2C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sample4/Sample4-Prefix.pch";
 				INFOPLIST_FILE = "Sample4/Sample4-Info.plist";
@@ -531,7 +537,9 @@
 		935004EC17AEA105001AD2C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sample4/Sample4-Prefix.pch";
 				INFOPLIST_FILE = "Sample4/Sample4-Info.plist";

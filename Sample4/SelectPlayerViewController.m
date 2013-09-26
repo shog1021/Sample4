@@ -74,7 +74,7 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
     // バーボタン
     UIBarButtonItem* right1 = [[UIBarButtonItem alloc]
                                initWithTitle:@"選択"
-                               style:UIBarButtonItemStyleBordered
+                               style:UIBarButtonItemStylePlain
                                target:self
                                action:@selector(launch:)];
     
@@ -107,12 +107,12 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
       [KxMenuItem menuItem:@"Facebook"
                      image:nil
                     target:self
-                    action:@selector(facebook:)],
+                    action:@selector(postFacebook:)],
       
-      [KxMenuItem menuItem:@"Tweeter"
+      [KxMenuItem menuItem:@"Twitter"
                      image:nil
                     target:self
-                    action:@selector(tweet:)],
+                    action:@selector(postTwitter:)],
 
       ];
     
@@ -184,32 +184,49 @@ static TestUIScrollView* createThumbScrollView(CGRect inFrame)
 }
 
 // tweet ボタン押下
-- (void)tweet:(id)sender {
+- (void)postTwitter:(id)sender {
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
         
-        SLComposeViewController *twitter = [[SLComposeViewController alloc]init];
+        SLComposeViewController *sns = [[SLComposeViewController alloc]init];
         // facebook 
-        twitter = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [twitter setInitialText:[NSString stringWithFormat:@"これが俺のJapanだ!\n#myjapan"]];
-        [twitter addImage:self.screenShot];
-        [self presentViewController:twitter animated:YES completion:NULL];
+        sns = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [sns setInitialText:[NSString stringWithFormat:@"これが俺のJapanだ!\n#myjapan"]];
+        [sns addImage:self.screenShot];
+        [self presentViewController:sns animated:YES completion:NULL];
         
     }
 }
 
-// tweet ボタン押下
-- (void)facebook:(id)sender {
+// Facebook ボタン押下
+- (void)postFacebook:(id)sender {
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]){
         
-        SLComposeViewController *facebook = [[SLComposeViewController alloc]init];
+        SLComposeViewController *sns = [[SLComposeViewController alloc]init];
         // facebook
-        facebook = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [facebook setInitialText:[NSString stringWithFormat:@"これが俺のJapanだ!\n#myjapan"]];
-        [facebook addImage:self.screenShot];
-        [self presentViewController:facebook animated:YES completion:NULL];
+        sns = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [sns setInitialText:[NSString stringWithFormat:@"これが俺のJapanだ!\n#myjapan"]];
+        [sns addImage:self.screenShot];
+        [self presentViewController:sns animated:YES completion:NULL];
         
     }
 }
+
+// Line ボタン押下
+- (void)postLine:(id)sender {
+    // この例ではUIImageクラスの_resultImageを送る
+    UIPasteboard *pasteboard = [UIPasteboard pasteboardWithUniqueName];
+    [pasteboard setData:UIImagePNGRepresentation(self.screenShot) forPasteboardType:@"public.png"];
+    
+    // pasteboardを使ってパスを生成
+    NSString *LineUrlString =
+    [NSString stringWithFormat:@"line://msg/image/%@",pasteboard.name];
+    
+    // URLスキームを使ってLINEを起動
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:LineUrlString]];
+    
+}
+
+
 
 
 // 保存 ボタン押下
